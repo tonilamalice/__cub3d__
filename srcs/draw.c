@@ -3,49 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:10:43 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/19 15:37:29 by achansar         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:42:39 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
 
-// static void	img_pix_put(t_img *img, int x, int y, int color)
-// {
-// 	char	*pixel;
+static void	img_pix_put(t_img *img, int x, int y, int color)
+{
+	char	*pixel;
 
-// 	if (x < WIDTH && x >= 0 && y < HEIGHT && y >= 0)
-// 	{
-// 		pixel = img->addr + (img->szline * y + x * (img->bpp / 8));
-// 		*(int *)pixel = color;
-// 	}
-// }
+    // printf("in put_pixel\n");
+    // printf("coloring in [%d][%d]\n", x, y);
+	if (x < WIDTH && x >= 0 && y < HEIGHT && y >= 0)
+	{
+		pixel = img->addr + (img->szline * y + x * (img->bpp / 8));
+		*(int *)pixel = color;
+	}
+}
 
-// // function to call img_pix_put for each int of a 2d array
-// void	draw_map(t_data *set)
-// {
-// 	int	x;
-// 	int	y;
+static int draw_column(int x, int start, int end, t_digdifanalyzer *dda)
+{
+    int y;
 
-// 	y = 0;
-// 	ft_bzero(set->img.addr, HEIGHT * WIDTH * sizeof(int));
-// 	while (y < 24 * UPSCALE)
-// 	{
-// 		x = 0;
-// 		while (x < 24 * UPSCALE)
-// 		{
-// 			// printf("map[%d][%d] = %d\n", y, x, map[y][x]);
-// 			if (set->worldMap[y][x] >= 1)
-// 				img_pix_put(&set->img, x, y, 0xFFFFFF);
-// 			else if (set->worldMap[y][x] == -2)
-// 				img_pix_put(&set->img, x, y, RED);
-// 			else
-// 				img_pix_put(&set->img, x, y, 0x000000);
-// 			x++;
-// 		}
-// 		y++;
-// 	}
-// 	mlx_put_image_to_window(set->mlx, set->win, set->img.img, 0, 0);
-// }
+    y = start;
+    while (y < end)
+    {
+        // printf("if y < end\n");
+        if (dda->side == 1)
+            img_pix_put(dda->img, x, y, 0xCCCCCC);
+        else
+            img_pix_put(dda->img, x, y, 0xf2f2f2);
+        y++;
+    }
+    return (0);
+}
+
+int drawloop(t_digdifanalyzer *dda, int x)
+{
+    int lineH;
+    int start;
+    int end;
+
+    lineH = fabs((int)HEIGHT / dda->perpWallDist);
+    start = (int)(-lineH / 2 + HEIGHT / 2);
+    end = (int)(lineH / 2 + HEIGHT / 2);
+
+    if (start < 0)
+        start = 0;
+    if (end >= HEIGHT)
+        end = HEIGHT - 1;
+
+    // printf("before draw_column\n");
+    draw_column(x, start, end, dda);
+    return (0);
+}

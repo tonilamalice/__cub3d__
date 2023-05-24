@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:08:55 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/19 16:31:07 by achansar         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:14:36 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static int	ft_arrows(t_data *set, int key)
 
 	// i = 0;
 	(void)key;
+	(void)set;
 	printf("In arrows\n");
 	// while (i < 24 * UPSCALE)
 	// {
@@ -37,7 +38,7 @@ static int	ft_arrows(t_data *set, int key)
 	// 	}
 	// 	i++;
 	// }
-	draw_map(set);
+	// draw_map(set);
 	// print_map(set->worldMap);
 	return (0);
 }
@@ -82,6 +83,7 @@ void key_release(int key, t_move *move)
 
 int	ft_keys(int key, t_data *set)
 {
+	(void)set;
 	if (key && key != ESC)
 		printf("%d\n", key);
 	// if (key == UP || key == DOWN || key == LEFT || key == RIGHT)

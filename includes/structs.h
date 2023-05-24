@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/19 17:03:59 by achansar         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:39:45 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,6 @@ enum e_keys {
 	TURNR		= 124
 };
 
-typedef struct s_digdifanalyser {
-    double mapX;
-    double mapY;
-    double sideDistX;
-    double sideDistY;
-    double deltaDistX;
-    double deltaDistY;
-    int stepX;
-    int stepY;
-    int hit;
-    int side;
-}   t_digdifanalyzer;
-
 typedef struct s_img {
 	void	*img;
 	char	*addr;
@@ -40,6 +27,21 @@ typedef struct s_img {
 	int		szline;
 	int		endian;
 }	t_img;
+
+typedef struct s_digdifanalyser {
+    int mapX;
+    int mapY;
+    double sideDistX;
+    double sideDistY;
+    double deltaDistX;
+    double deltaDistY;
+    double stepX;
+    double stepY;//       may be int
+    int hit;
+    int side;
+	double perpWallDist;
+	t_img	*img;
+}   t_digdifanalyzer;
 
 typedef struct s_move {
 	float moveSpeed;
@@ -53,7 +55,7 @@ typedef struct s_move {
 }	t_move;
 
 typedef struct s_rays {
-    double cameraX;
+    int cameraX;
     double rayPosX;
     double rayPosY;
     double rayDirX;
@@ -72,6 +74,7 @@ typedef struct s_game {
 	int		**worldMap;
 	t_move	*move;
     t_rays  *rays;
+	t_digdifanalyzer *dda;
 }	t_game;
 
 typedef struct s_data {
