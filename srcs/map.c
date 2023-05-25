@@ -6,7 +6,7 @@
 /*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:24:47 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/24 16:57:54 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/05/25 14:46:08 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,22 +76,33 @@ int		**ft_upscale(int size, int mult)
 
 	i = 0;
     j = 0;
-
-	if (!(new_map = (int **)malloc(sizeof(int *) * (size * mult + 1))))
+    (void)mult;
+	if (!(new_map = (int **)malloc(sizeof(int *) * (size /** mult + 1*/))))
 		return (NULL);
-	while (i < size)
-	{
-        c = 0;
-        while (c < mult)
+	// while (i < size)
+	// {
+    //     c = 0;
+    //     while (c < mult)
+    //     {
+    //         new_map[j] = ft_dup_line(&map[i][0], size, mult);
+    //         j++;
+    //         c++;
+    //     }
+    //     i++;
+    // }
+    while (i < size)
+    {
+        new_map[i] = malloc(sizeof(int) * size);
+        j = 0;
+        while (j < size)
         {
-            new_map[j] = ft_dup_line(&map[i][0], size, mult);
+            new_map[i][j] = map[i][j];
             j++;
-            c++;
         }
         i++;
     }
-    new_map[j] = NULL;
-    printf("map[9][11] in init = %d\n", new_map[100][200]);
+    // new_map[i] = NULL;
+    printf("Before everything : map[8][1] in init = %d\n", new_map[8][1]);
 	return (new_map);
 }
 

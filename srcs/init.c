@@ -6,7 +6,7 @@
 /*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:11:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/24 16:58:24 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:28:17 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ static t_game	*init_game(void)
 
 	game = NULL;
 	game = malloc(sizeof(t_game));// protection
-	game->posX = 100.0;
-	game->posY = 200.0;
+	game->posX = 9.0;
+	game->posY = 8.0;
 	game->dirX = -1.0;
 	game->dirY = 0.0;
 	game->planeX = 0.0;
 	game->planeY = -1.0;
-	game->screenWidth = 480;
-	game->screenHeight = 240;
+	game->screenWidth = WIDTH;
+	game->screenHeight = HEIGHT;
 	game->worldMap = ft_upscale(24, UPSCALE);
 	game->move = init_move();
 	game->rays = init_rays();

@@ -6,7 +6,7 @@
 #    By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 10:47:25 by achansar          #+#    #+#              #
-#    Updated: 2023/05/24 16:23:12 by arnalove         ###   ########.fr        #
+#    Updated: 2023/05/25 18:20:34 by arnalove         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = cub3D
 #ARGUMENTS
 CC = gcc
 FLAGS = -Wall -Werror -Wno-unused -Wno-unused-parameter -Wextra -O1 -O2 -O3 
-SEG = #-fsanitize=address -g
+SEG = -fsanitize=address -g
 
 #CUB3D FILES
 SRC_PATH = ./srcs/
@@ -26,6 +26,7 @@ SRC =	main \
 		render \
 		draw \
 		key \
+		move \
 		display
 C_FILES = $(addprefix $(SRC_PATH), $(SRC:=.c))
 OBJ = $(addprefix $(SRC_PATH), $(SRC:=.o))

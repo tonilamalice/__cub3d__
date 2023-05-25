@@ -6,7 +6,7 @@
 /*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:26:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/24 18:45:08 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/05/25 18:38:42 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ int main(int argc, char **argv)
 	// draw_map(set);
 
 	render(data, data->game, data->game->move, data->game->rays);
-	// mlx_hook(data->win, 2, (1L << 0), &ft_keys, &data);
+	mlx_hook(data->win, 2, (1L << 0), &ft_keys, data);
 	// mlx_hook(data->win, 3, (1L << 1), &key_release, &data);
 	mlx_hook(data->win, 17, 0, &destroy, &data);
-	// mlx_loop_hoo(&render);//                                loop is here
+	mlx_loop_hook(data->mlx, &call_to_render, data);//                                loop is here
     mlx_loop(data->mlx);
     return (0);
 }

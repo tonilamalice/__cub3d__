@@ -6,7 +6,7 @@
 /*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:08:55 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/24 16:14:36 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/05/25 18:32:17 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	ft_arrows(t_data *set, int key)
 	return (0);
 }
 
-static void ft_move(int key, t_move *move)
+static void key_press(int key, t_move *move)
 {
 	if (key == UP)
 		move->forward = true;
@@ -63,6 +63,7 @@ static void ft_move(int key, t_move *move)
 		move->turn = true;
 		move->rotSpeed = -0.2;
 	}
+	// printf("key_press done\n");
 }
 
 void key_release(int key, t_move *move)
@@ -81,14 +82,13 @@ void key_release(int key, t_move *move)
 		move->turn = false;
 }
 
-int	ft_keys(int key, t_data *set)
+int	ft_keys(int key, t_data *data)
 {
-	(void)set;
-	if (key && key != ESC)
-		printf("%d\n", key);
-	// if (key == UP || key == DOWN || key == LEFT || key == RIGHT)
-	// 	ft_arrows(set, key);
+	// if (key && key != ESC)
+	// 	printf("%d\n", key);
+	if (key == UP || key == DOWN || key == LEFT || key == RIGHT)
+		key_press(key, data->game->move);
 	else if (key == ESC)
-		destroy(set);
+		destroy(data);
 	return (0);
 }

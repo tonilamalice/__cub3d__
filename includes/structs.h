@@ -6,7 +6,7 @@
 /*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/24 16:39:45 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/05/25 15:05:57 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef struct s_move {
 }	t_move;
 
 typedef struct s_rays {
-    int cameraX;
+    double cameraX;
     double rayPosX;
     double rayPosY;
     double rayDirX;
@@ -63,12 +63,12 @@ typedef struct s_rays {
 }   t_rays;
 
 typedef struct s_game {
-	float	posX;
-	float	posY;
-	float	dirX;
-	float	dirY;
-	float	planeX;
-	float	planeY;
+	double	posX;
+	double	posY;
+	double	dirX;
+	double	dirY;
+	double	planeX;
+	double	planeY;
 	int		screenWidth;
 	int		screenHeight;
 	int		**worldMap;
