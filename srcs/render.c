@@ -6,7 +6,7 @@
 /*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:53:38 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/25 18:37:57 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:18:01 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ int render(t_data *data, t_game *game, t_move *move, t_rays *rays)
         
         // screenlock() , utile ? peut etre pour eviter  residus
         ft_move(game, move, game->worldMap);
+        // printf("After move : posx = %f & posY = %f\n", game->posX, game->posY);
 
         // besoin bzero() avant ?
         while (x <= game->screenWidth)

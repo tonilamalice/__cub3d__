@@ -6,7 +6,7 @@
 /*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:27:06 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/25 18:38:13 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/05/30 16:41:38 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int drawloop(t_digdifanalyzer *dda, int x);
 
 // CONTROLS FUNCTIONS
 int	ft_keys(int key, t_data *set);
-void key_release(int key, t_move *move);
+int key_release(int key, t_move *move);
 
 // MOVE FUNCTIONS
 void ft_move(t_game *game, t_move *move, int **map);

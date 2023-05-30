@@ -6,7 +6,7 @@
 /*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:24:47 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/25 14:46:08 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/05/30 17:13:14 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,17 +79,6 @@ int		**ft_upscale(int size, int mult)
     (void)mult;
 	if (!(new_map = (int **)malloc(sizeof(int *) * (size /** mult + 1*/))))
 		return (NULL);
-	// while (i < size)
-	// {
-    //     c = 0;
-    //     while (c < mult)
-    //     {
-    //         new_map[j] = ft_dup_line(&map[i][0], size, mult);
-    //         j++;
-    //         c++;
-    //     }
-    //     i++;
-    // }
     while (i < size)
     {
         new_map[i] = malloc(sizeof(int) * size);

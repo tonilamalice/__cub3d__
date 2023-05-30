@@ -6,7 +6,7 @@
 /*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/25 15:05:57 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/05/30 17:05:58 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ typedef struct s_digdifanalyser {
 }   t_digdifanalyzer;
 
 typedef struct s_move {
-	float moveSpeed;
-	float rotSpeed;
+	double moveSpeed;
+	double rotSpeed;
 	bool forward;
 	bool back;
 	bool turn;
