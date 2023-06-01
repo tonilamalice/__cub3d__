@@ -6,7 +6,7 @@
 /*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:53:38 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/30 16:18:01 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/06/01 14:52:04 by arnalove         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int render(t_data *data, t_game *game, t_move *move, t_rays *rays)
         // printf("After move : posx = %f & posY = %f\n", game->posX, game->posY);
 
         // besoin bzero() avant ?
+        ft_bzero(data->img.addr, WIDTH * HEIGHT * sizeof(int));
         while (x <= game->screenWidth)
         {
             rays->cameraX = (2 * x / WIDTH) - 1;
