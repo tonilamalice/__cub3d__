@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:11:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/25 15:28:17 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/06/26 16:26:01 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static t_digdifanalyzer *init_dda(void)
 	t_digdifanalyzer *dda;
 
 	dda = NULL;
-	dda = malloc(sizeof(t_digdifanalyzer));
+	dda = malloc(sizeof(t_digdifanalyzer));// protection
 	
 	return (dda);
 }
@@ -27,7 +27,7 @@ static t_rays *init_rays(void)
 	t_rays *rays;
 
 	rays = NULL;
-	rays = malloc(sizeof(t_rays));
+	rays = malloc(sizeof(t_rays));// protection
 	return (rays);
 }
 
@@ -37,8 +37,8 @@ static t_move *init_move(void)
 	
 	move = NULL;
 	move = malloc(sizeof(t_move));// protection
-	move->moveSpeed = 0.2;
-	move->rotSpeed = 0.2;
+	move->moveSpeed = 0.1;
+	move->rotSpeed = 0.1;
 	move->forward = false;
 	move->back = false;
 	move->left = false;

@@ -3,45 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   key.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:08:55 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/30 17:21:17 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/06/26 16:36:49 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
-
-static int	ft_arrows(t_data *set, int key)
-{
-	// int	i;
-	// int	j;
-
-	// i = 0;
-	(void)key;
-	(void)set;
-	printf("In arrows\n");
-	// while (i < 24 * UPSCALE)
-	// {
-	// 	j = 0;
-	// 	while (j < 24 * UPSCALE)
-	// 	{
-	// 		// if (set->worldMap[i][j] == -2)
-	// 		// {
-	// 		// 	if (key == UP && set->worldMap[i - 1][j] == 0)
-	// 		// 	{
-	// 		// 		set->worldMap[i - 1][j] == -2;
-	// 		// 		set->worldMap[i][j] == 0;
-	// 		// 	}
-	// 		// }
-	// 		j++;
-	// 	}
-	// 	i++;
-	// }
-	// draw_map(set);
-	// print_map(set->worldMap);
-	return (0);
-}
 
 static void key_press(int key, t_move *move)
 {
@@ -63,7 +32,6 @@ static void key_press(int key, t_move *move)
 		move->turn = true;
 		move->rotSpeed = -0.2;
 	}
-	// printf("key_press done\n");
 }
 
 int key_release(int key, t_move *move)
@@ -87,7 +55,7 @@ int	ft_keys(int key, t_data *data)
 {
 	// if (key && key != ESC)
 	// 	printf("%d\n", key);
-	if (key == UP || key == DOWN || key == LEFT || key == RIGHT)
+	if (key == UP || key == DOWN || key == LEFT || key == RIGHT || key == TURNL || key == TURNR)
 	{
 		key_press(key, data->game->move);
 		// printf("forward = %d\n", data->game->move->forward);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:10:43 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/24 16:42:39 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/06/26 16:48:05 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,19 @@ static int draw_column(int x, int start, int end, t_digdifanalyzer *dda)
     y = start;
     while (y < end)
     {
-        // printf("if y < end\n");
         if (dda->side == 1)
             img_pix_put(dda->img, x, y, 0xCCCCCC);
         else
             img_pix_put(dda->img, x, y, 0xf2f2f2);
+        y++;
+    }
+    if (end < 0)
+        end = HEIGHT;
+    y = end;
+    while (y < HEIGHT)
+    {
+        img_pix_put(dda->img, x, y, 0xcc0000);
+        img_pix_put(dda->img, x, HEIGHT-y-1, 0x006666);
         y++;
     }
     return (0);
@@ -48,9 +56,9 @@ int drawloop(t_digdifanalyzer *dda, int x)
     int start;
     int end;
 
-    lineH = fabs((int)HEIGHT / dda->perpWallDist);
-    start = (int)(-lineH / 2 + HEIGHT / 2);
-    end = (int)(lineH / 2 + HEIGHT / 2);
+    lineH = abs((int)((double)HEIGHT / dda->perpWallDist));
+    start = -lineH / 2 + (double)HEIGHT / 2;
+    end = lineH / 2 + (double)HEIGHT / 2;
 
     if (start < 0)
         start = 0;

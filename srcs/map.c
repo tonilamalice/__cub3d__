@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:24:47 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/30 17:13:14 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:33:38 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int		**ft_upscale(int size, int mult)
         i++;
     }
     // new_map[i] = NULL;
-    printf("Before everything : map[8][1] in init = %d\n", new_map[8][1]);
+    // printf("Before everything : map[8][1] in init = %d\n", new_map[8][1]);
 	return (new_map);
 }
 
@@ -102,10 +102,10 @@ void print_map(int **map)
     int j;
 
     i = 0;
-    while (map[i])
+    while (i < 24)
     {
         j = 0;
-        while (j < 24 * UPSCALE)
+        while (j < 24)
         {
             printf("%d ", map[i][j]);
             j++;

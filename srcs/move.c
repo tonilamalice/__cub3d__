@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:34:41 by arnalove          #+#    #+#             */
-/*   Updated: 2023/05/30 17:19:54 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/06/26 16:39:01 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void ft_move(t_game *game, t_move *move, int **map)
 
     if (move->forward)// AVANCER
     {
-        if (map[(int)(game->posX + game->dirX * move->moveSpeed)][(int)game->posX] == 0)
+        if (map[(int)(game->posX + game->dirX * move->moveSpeed)][(int)game->posY] == 0)
             game->posX += game->dirX * move->moveSpeed;
         if (map[(int)game->posX][(int)(game->posY + game->dirY * move->moveSpeed)] == 0)
             game->posY += game->dirY * move->moveSpeed;
     }
     if (move->back)// RECULER
     {
-        if (map[(int)(game->posX - game->dirX * move->moveSpeed)][(int)game->posX] == 0)
+        if (map[(int)(game->posX - game->dirX * move->moveSpeed)][(int)game->posY] == 0)
             game->posX -= game->dirX * move->moveSpeed;
         if (map[(int)game->posX][(int)(game->posY - game->dirY * move->moveSpeed)] == 0)
             game->posY -= game->dirY * move->moveSpeed;
@@ -40,16 +40,16 @@ void ft_move(t_game *game, t_move *move, int **map)
         game->planeX = game->planeX * cos(-move->rotSpeed) - game->planeY * sin(-move->rotSpeed);
         game->planeY = oldPlaneX * sin(-move->rotSpeed) + game->planeY * cos(-move->rotSpeed);
     }
-    if (move->left) // LATERAL GAUCHE
+    if (move->right) // LATERAL GAUCHE
     {
-        if (map[(int)(game->posX + game->dirX * move->moveSpeed)][(int)game->posX] == 0)
+        if (map[(int)(game->posX + game->dirX * move->moveSpeed)][(int)game->posY] == 0)
             game->posX += game->planeX * move->moveSpeed;
         if (map[(int)game->posX][(int)(game->posY + game->dirY * move->moveSpeed)] == 0)
             game->posY += game->planeY * move->moveSpeed;
     }
-    if (move->right) // LATERAL DROIT
+    if (move->left) // LATERAL DROIT
     {
-        if (map[(int)(game->posX - game->dirX * move->moveSpeed)][(int)game->posX] == 0)
+        if (map[(int)(game->posX - game->dirX * move->moveSpeed)][(int)game->posY] == 0)
             game->posX -= game->planeX * move->moveSpeed;
         if (map[(int)game->posX][(int)(game->posY - game->dirY * move->moveSpeed)] == 0)
             game->posY -= game->planeY * move->moveSpeed;

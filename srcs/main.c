@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:26:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/30 16:48:19 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:37:04 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
     (void)argv;
 
 	data = init_data();
-	// print_map(worldMap);
+	// print_map(data->game->worldMap);
 	// draw_map(set);
 
 	render(data, data->game, data->game->move, data->game->rays);
@@ -50,13 +50,3 @@ int main(int argc, char **argv)
     mlx_loop(data->mlx);
     return (0);
 }
-
-
-/*
-
-
-On arrive a une image qui ressemble a quelque chose. 
-Besoin de desize la map maintenant ?
-
-
-*/

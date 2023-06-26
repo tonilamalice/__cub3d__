@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:53:38 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/01 14:52:04 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/06/26 16:55:55 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int ft_dda(t_game *game, t_rays *rays, t_digdifanalyzer *dda)
 {
     dda->mapX = (int)rays->rayPosX;
     dda->mapY = (int)rays->rayPosY;
-    // printf("Beg of DDA : posX = %f & posY = %f\n", rays->rayPosX, rays->rayPosY);
-    // printf("And mapX = %d & mapY = %d\n", dda->mapX, dda->mapY);
     dda->deltaDistX = sqrt(1 + (rays->rayDirY * rays->rayDirY) / (rays->rayDirX * rays->rayDirX));
     dda->deltaDistY = sqrt(1 + (rays->rayDirX * rays->rayDirX) / (rays->rayDirY * rays->rayDirY));
+
+    
     dda->hit = 0;
     if (rays->rayDirX < 0)
     {
@@ -45,55 +45,46 @@ int ft_dda(t_game *game, t_rays *rays, t_digdifanalyzer *dda)
     // performing the DDA
     while (dda->hit == 0)
     {
-        // printf("times of hit\n");
         if (dda->sideDistX < dda->sideDistY)
         {
-            dda->sideDistX += dda->sideDistX;
+            dda->sideDistX += dda->deltaDistX;
             dda->mapX += dda->stepX;
             dda->side = 0;
         }
         else
         {
-            dda->sideDistY += dda->sideDistY;
+            dda->sideDistY += dda->deltaDistY;
             dda->mapY += dda->stepY;
             dda->side = 1;
         }
-        if (game->worldMap[dda->mapX][dda->mapY] > 0)
+        if (game->worldMap[(int)dda->mapX][(int)dda->mapY] >= 1)
         {
-            // printf("In DDA : wall is at map[%d][%d] = %d\n", dda->mapX, dda->mapY, game->worldMap[dda->mapX][dda->mapY]);
-            // printf("While Char is at map[%f][%f] = %d\n", rays->rayPosX, rays->rayPosY, game->worldMap[(int)rays->rayPosX][(int)rays->rayPosY]);
             dda->hit = 1;
         }
     }
-    // printf("Infos\nmapX = %d / rayPosX = %f / stepX = %f / rayDirx = %f\n", dda->mapX, rays->rayPosX, dda->stepX, rays->rayDirX);
     //Correct the dist
     if (dda->side == 0)
         dda->perpWallDist = fabs((dda->mapX - rays->rayPosX + (1 - dda->stepX) / 2) / rays->rayDirX);
     else
         dda->perpWallDist = fabs((dda->mapY - rays->rayPosY + (1 - dda->stepY) / 2) / rays->rayDirY);
-    // printf("End of DDA : perpWallDist = %f\n", dda->perpWallDist);
     return (0);
 }
 
 int render(t_data *data, t_game *game, t_move *move, t_rays *rays)
 {
-    float x;
+    int x;
     
-    x = 0.0;
+    x = 0;
     if (move->forward || move->back || move->left || move->right || move->turn || move->firstscreen)
     {
         move->firstscreen = false;
-        
-        // screenlock() , utile ? peut etre pour eviter  residus
-        ft_move(game, move, game->worldMap);
-        // printf("After move : posx = %f & posY = %f\n", game->posX, game->posY);
 
-        // besoin bzero() avant ?
+        ft_move(game, move, game->worldMap);
+        printf("pos = [%f][%f]\n", game->posX, game->posY);
         ft_bzero(data->img.addr, WIDTH * HEIGHT * sizeof(int));
         while (x <= game->screenWidth)
         {
-            rays->cameraX = (2 * x / WIDTH) - 1;
-            // printf("\n\ncameraX = %f\n", rays->cameraX);
+            rays->cameraX = (2 * (double)x / (double)WIDTH) - 1;
             rays->rayPosX = game->posX;
             rays->rayPosY = game->posY;
             rays->rayDirX = game->dirX + game->planeX * rays->cameraX;
@@ -104,8 +95,6 @@ int render(t_data *data, t_game *game, t_move *move, t_rays *rays)
             x++;
         }
         mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
-        // printf("right after puting image\n");
-        // screenUnlock();
     }
     return (0);
 }

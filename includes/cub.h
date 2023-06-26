@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:27:06 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/30 16:41:38 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/06/26 15:56:32 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 
 // # define WHITE 0xFFFFFF
 # define RED 0xFF0000
-# define WIDTH 480
-# define HEIGHT 240
+# define WIDTH 800
+# define HEIGHT 400
 # define UPSCALE 42
 
 

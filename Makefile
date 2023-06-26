@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+         #
+#    By: achansar <achansar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 10:47:25 by achansar          #+#    #+#              #
-#    Updated: 2023/05/25 18:20:34 by arnalove         ###   ########.fr        #
+#    Updated: 2023/06/26 17:27:50 by achansar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,10 +56,12 @@ $(NAME): $(OBJ) $(LBFT_OBJ)
 
 clean:
 	@rm -f $(OBJ) $(LBFT_OBJ)
+	@make clean -sC $(MLX_PATH)
 
 fclean: clean
 	@rm -f $(NAME)
 
 re: fclean all
+	
 
 .PHONY: all clean fclean re

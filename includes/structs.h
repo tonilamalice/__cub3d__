@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arnalove <arnalove@student.42.fr>          +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/05/30 17:05:58 by arnalove         ###   ########.fr       */
+/*   Updated: 2023/06/26 11:45:41 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ typedef struct s_img {
 }	t_img;
 
 typedef struct s_digdifanalyser {
-    int mapX;
-    int mapY;
+    double mapX;
+    double mapY;
     double sideDistX;
     double sideDistY;
     double deltaDistX;
     double deltaDistY;
-    double stepX;
-    double stepY;//       may be int
+    int stepX;
+    int stepY;//       may be int
     int hit;
     int side;
 	double perpWallDist;
