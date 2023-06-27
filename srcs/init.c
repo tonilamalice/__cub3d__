@@ -6,11 +6,27 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:11:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/26 16:26:01 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/27 15:14:09 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
+
+static t_text *init_texture(void)
+{
+	t_text *text;
+	char path[19] = "texture/wall_4.xpm";
+
+	text = NULL;
+	// text = malloc(sizeof(t_text));// protection
+	text->texFiles = ft_strdup(path);
+	text->texHeight = 64;
+	text->texHeight = 64;
+	
+	text->textures = malloc(sizeof(char *));
+	text->text_add = malloc(sizeof(char *));
+	return (text);
+}
 
 static t_digdifanalyzer *init_dda(void)
 {
@@ -38,7 +54,7 @@ static t_move *init_move(void)
 	move = NULL;
 	move = malloc(sizeof(t_move));// protection
 	move->moveSpeed = 0.1;
-	move->rotSpeed = 0.1;
+	move->rotSpeed = 0.05;
 	move->forward = false;
 	move->back = false;
 	move->left = false;
@@ -54,8 +70,8 @@ static t_game	*init_game(void)
 
 	game = NULL;
 	game = malloc(sizeof(t_game));// protection
-	game->posX = 9.0;
-	game->posY = 8.0;
+	game->posX = 11.0;
+	game->posY = 10.0;
 	game->dirX = -1.0;
 	game->dirY = 0.0;
 	game->planeX = 0.0;
@@ -66,6 +82,7 @@ static t_game	*init_game(void)
 	game->move = init_move();
 	game->rays = init_rays();
 	game->dda = init_dda();
+	game->text = init_texture();
 	return (game);
 }
 

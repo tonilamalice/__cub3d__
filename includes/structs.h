@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/26 11:45:41 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/27 15:22:07 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,14 @@ typedef struct s_digdifanalyser {
 	t_img	*img;
 }   t_digdifanalyzer;
 
+typedef struct s_text {
+	int	texWidth;
+	int	texHeight;
+	char *texFiles;
+	char *textures;
+	char *text_add;
+}	t_text;
+
 typedef struct s_move {
 	double moveSpeed;
 	double rotSpeed;
@@ -74,7 +82,8 @@ typedef struct s_game {
 	int		**worldMap;
 	t_move	*move;
     t_rays  *rays;
-	t_digdifanalyzer *dda;
+	t_digdifanalyzer	*dda;
+	t_text				*text;
 }	t_game;
 
 typedef struct s_data {
