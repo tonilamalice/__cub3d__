@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:11:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/27 15:14:09 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/27 19:11:49 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 static t_text *init_texture(void)
 {
 	t_text *text;
-	char path[19] = "texture/wall_4.xpm";
 
 	text = NULL;
-	// text = malloc(sizeof(t_text));// protection
-	text->texFiles = ft_strdup(path);
+	text = malloc(sizeof(t_text));// protection
+	text->texFiles = ft_strdup("texture/mossy.xpm");
 	text->texHeight = 64;
 	text->texHeight = 64;
-	
-	text->textures = malloc(sizeof(char *));
-	text->text_add = malloc(sizeof(char *));
+
+	text->textures = NULL;
+	text->text_array = NULL;
+	text->color = 0;
 	return (text);
 }
 

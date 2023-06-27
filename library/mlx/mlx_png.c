@@ -1,5 +1,8 @@
 
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <sys/mman.h>
@@ -13,7 +16,7 @@
 
 #include <OpenGL/gl3.h>
 #include	"mlx_int.h"
-
+#define GL_SILENCE_DEPRECATION
 
 #define	PNG_MAGIC_SIZE	8
 unsigned char magic[PNG_MAGIC_SIZE] = {137, 80, 78, 71, 13, 10, 26, 10};
@@ -416,3 +419,5 @@ void	*mlx_png_file_to_image(mlx_ptr_t *xvar, char *file, int *width, int *height
   close(fd);
   return (img);
 }
+
+#pragma clang diagnostic pop

@@ -9,7 +9,7 @@
 
 #include "mlx_int.h"
 #include "mlx_new_window.h"
-
+#define GL_SILENCE_DEPRECATION
 
 NSOpenGLPixelFormatAttribute pfa_attrs[] =
   {

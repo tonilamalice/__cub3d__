@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:27:06 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/27 15:24:35 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/27 18:36:02 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int render(t_data *data, t_game *game, t_move *move, t_rays *rays);
 int call_to_render(t_data *data);
 
 // DRAW FUNCTIONS
-int drawloop(t_digdifanalyzer *dda, int x);
+int drawloop(t_game *game, t_digdifanalyzer *dda);
 
 // CONTROLS FUNCTIONS
 int	ft_keys(int key, t_data *set);
@@ -58,5 +58,6 @@ int		**ft_upscale(int size, int old_size);
 
 //DISPLAY FUNCTIONS
 int	open_window(t_data *set);
+int create_img(t_data *set);
 
 #endif

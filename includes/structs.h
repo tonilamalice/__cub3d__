@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/27 15:22:07 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/27 18:51:23 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ typedef struct s_digdifanalyser {
     int hit;
     int side;
 	double perpWallDist;
+	int		x;
+	int start;
+	int end;
 	t_img	*img;
 }   t_digdifanalyzer;
 
@@ -48,7 +51,12 @@ typedef struct s_text {
 	int	texHeight;
 	char *texFiles;
 	char *textures;
-	char *text_add;
+	char *text_array;
+
+	double wallX;
+	int texX;
+	int texY;
+	int color;
 }	t_text;
 
 typedef struct s_move {
