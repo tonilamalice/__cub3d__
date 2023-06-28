@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:34:41 by arnalove          #+#    #+#             */
-/*   Updated: 2023/06/28 18:45:27 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 18:54:35 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void ft_move(t_game *game, t_move *move, char **map)
 {
 	double olDirX;
 	double oldPlaneX;
-	
+
 	if (move->forward)// AVANCER
 		mv_forward(game, move, map);
 	if (move->back)// RECULER
