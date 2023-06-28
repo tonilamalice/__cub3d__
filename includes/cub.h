@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:27:06 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/27 18:36:02 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:26:19 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int render(t_data *data, t_game *game, t_move *move, t_rays *rays);
 int call_to_render(t_data *data);
 
 // DRAW FUNCTIONS
+int ft_dda(t_game *game, t_rays *rays, t_digdifanalyzer *dda);
 int drawloop(t_game *game, t_digdifanalyzer *dda);
+void	img_pix_put(t_img *img, int x, int y, int color);
 
 // CONTROLS FUNCTIONS
 int	ft_keys(int key, t_data *set);
@@ -45,6 +47,8 @@ void ft_move(t_game *game, t_move *move, int **map);
 
 // TEXTURES FUNCTIONS
 int load_textures(t_data *data, t_img *img, t_text *text);
+int color_floor_ceiling(t_digdifanalyzer *dda, t_text *text, int y);
+int put_textures(t_digdifanalyzer *dda, t_text *text, int lineH, int *y);
 
 // LIBFT FUNCTIONS
 void	ft_bzero(void *s, size_t n);

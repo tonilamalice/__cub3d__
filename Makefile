@@ -6,7 +6,7 @@
 #    By: achansar <achansar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 10:47:25 by achansar          #+#    #+#              #
-#    Updated: 2023/06/27 16:44:39 by achansar         ###   ########.fr        #
+#    Updated: 2023/06/28 15:43:13 by achansar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ SRC =	main \
 		key \
 		move \
 		display \
-		textures
+		textures \
+		raycasting
 C_FILES = $(addprefix $(SRC_PATH), $(SRC:=.c))
 OBJ = $(addprefix $(SRC_PATH), $(SRC:=.o))
 

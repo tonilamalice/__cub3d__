@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/27 18:51:23 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:26:54 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ typedef struct s_text {
 	int texX;
 	int texY;
 	int color;
+
+	int color_floor;
+	int color_ceiling;
 }	t_text;
 
 typedef struct s_move {
