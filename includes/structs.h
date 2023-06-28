@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 17:03:40 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 17:50:13 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ typedef struct s_game {
 	double	planeY;
 	int		screenWidth;
 	int		screenHeight;
-	int		**worldMap;
+	char		**worldMap;
 	t_move	*move;
     t_rays  *rays;
 	t_digdifanalyzer	*dda;
