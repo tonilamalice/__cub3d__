@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:26:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 16:46:08 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/06/28 17:55:32 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ int	destroy(t_data *data)
 int main(int argc, char **argv)
 {
     t_data  *data = NULL;
-	// t_game	game;
+	t_game	game;
 
-	// ft_memset(&game, 0, sizeof (t_game));
-	// parsing(&game, argc, argv);
+	ft_memset(&game, 0, sizeof (t_game));
+	parsing(&game, argc, argv);
 
-    (void)argc;
-    (void)argv;
+    // (void)argc;
+    // (void)argv;
 
 	data = init_data();
 	// print_map(data->game->worldMap);

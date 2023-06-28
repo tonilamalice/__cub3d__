@@ -6,7 +6,7 @@
 #    By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 10:47:25 by achansar          #+#    #+#              #
-#    Updated: 2023/06/28 16:39:30 by ade-bast         ###   ########.fr        #
+#    Updated: 2023/06/28 17:56:31 by ade-bast         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = cub3D
 #ARGUMENTS
 CC = gcc
 FLAGS = -Wall -Werror -Wno-unused -Wno-unused-parameter -Wextra -O1 -O2 -O3 
-SEG = -fsanitize=address -g
+#SEG = -fsanitize=address -g
 # MLX = -lmlx -framework OpenGL -framework AppKit
 
 #CUB3D FILES
