@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:34:41 by arnalove          #+#    #+#             */
-/*   Updated: 2023/06/26 16:39:01 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 13:07:02 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@ void ft_move(t_game *game, t_move *move, int **map)
 {
     double olDirX;
     double oldPlaneX;
+
+/*
+    Appliquer une tolerance de 0.1 sur les collisions
+*/
 
     if (move->forward)// AVANCER
     {

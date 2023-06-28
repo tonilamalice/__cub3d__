@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:53:38 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/27 18:36:11 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 13:12:08 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int ft_dda(t_game *game, t_rays *rays, t_digdifanalyzer *dda)
     dda->deltaDistX = sqrt(1 + (rays->rayDirY * rays->rayDirY) / (rays->rayDirX * rays->rayDirX));
     dda->deltaDistY = sqrt(1 + (rays->rayDirX * rays->rayDirX) / (rays->rayDirY * rays->rayDirY));
 
-    
     dda->hit = 0;
     if (rays->rayDirX < 0)
     {

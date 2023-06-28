@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:10:43 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/27 19:04:54 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:08:55 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,19 @@ static void	img_pix_put(t_img *img, int x, int y, int color)
 
 static int draw_column(t_digdifanalyzer *dda, t_text *text, t_rays *rays, int lineH)
 {
-	(void)lineH;
+	/*
+		CHECK FROM HERE
+	*/
 	int y;
 
 	if (dda->side == 1)
-	{
 		text->wallX = rays->rayPosX + ((dda->mapY - rays->rayPosY + (1 - dda->stepY) / 2) / rays->rayDirY) * rays->rayDirX;
-		// img_pix_put(dda->img, dda->x, y, 0xCCCCCC);
-	}
+		// text->wallX = rays->rayPosX + dda->perpWallDist * rays->rayDirX;
 	else
-	{
 		text->wallX = rays->rayPosY + ((dda->mapX - rays->rayPosX + (1 - dda->stepX) / 2) / rays->rayDirX) * rays->rayDirY;
-		// img_pix_put(dda->img, dda->x, y, 0xf2f2f2);
-	}
+		// text->wallX = rays->rayPosY + dda->perpWallDist * rays->rayDirY;
+
 	text->wallX -= floor(text->wallX);
-	
 	text->texX = (int)(text->wallX * text->texWidth);
 	if (dda->side == 0 && rays->rayDirX > 0)
 		text->texX = text->texWidth - text->texX - 1;
@@ -49,23 +47,26 @@ static int draw_column(t_digdifanalyzer *dda, t_text *text, t_rays *rays, int li
 		text->texX = text->texWidth - text->texX - 1;
 
 
+	// Put textures
 	y = dda->start;
 	while (y < dda->end)
 	{
 
-		text->texY = (y * 2 - HEIGHT + lineH) * (text->texHeight / 2) / lineH;
+		text->texY = (int)(y * 2 - HEIGHT + lineH) * (text->texHeight / 2) / lineH;
 		text->color = 1;
-		text->color = text->text_array[text->texX + text->texY * text->texWidth];//     -> ici pour ajouter un index
+		text->color = ((unsigned int *)text->text_array)[text->texX + text->texY * text->texWidth];//     -> ici pour ajouter un index
 		img_pix_put(dda->img, dda->x, y, text->color);
 		y++;
 	}
+
+	// Color on floor and ceilling
 	if (dda->end < 0)
 		dda->end = HEIGHT;
 	y = dda->end;
 	while (y < HEIGHT)
 	{
-		img_pix_put(dda->img, dda->x, y, 0xcc0000);
-		img_pix_put(dda->img, dda->x, HEIGHT-y-1, 0x006666);
+		img_pix_put(dda->img, dda->x, y, 0x964B00);
+		img_pix_put(dda->img, dda->x, HEIGHT - y - 1, 0x006666);
 		y++;
 	}
 	return (0);
