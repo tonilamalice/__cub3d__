@@ -3,17 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 16:16:52 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:26:54 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-# include "struct.h"
-# include "get_next_line.h"
-# include "cub.h"
 
 enum e_keys {
 	ESC			= 53,
@@ -24,19 +19,6 @@ enum e_keys {
 	TURNL		= 123,
 	TURNR		= 124
 };
-
-typedef struct s_pos {
-	double	x;
-	double	y;
-}	t_pos;
-
-typedef struct s_sprite {
-	char	*n_path;
-	char	*s_path;
-	char	*e_path;
-	char	*w_path;
-	char	**tab_path;
-}	t_sprite;
 
 typedef struct s_img {
 	void	*img;
@@ -75,6 +57,9 @@ typedef struct s_text {
 	int texX;
 	int texY;
 	int color;
+
+	int color_floor;
+	int color_ceiling;
 }	t_text;
 
 typedef struct s_move {
@@ -97,11 +82,6 @@ typedef struct s_rays {
 }   t_rays;
 
 typedef struct s_game {
-	char		*floor;
-	char		*roof;
-	char		*map;
-	char		**s_map;
-	char		player_dir;
 	double	posX;
 	double	posY;
 	double	dirX;
@@ -110,15 +90,11 @@ typedef struct s_game {
 	double	planeY;
 	int		screenWidth;
 	int		screenHeight;
-	int		color_floor;
-	int		color_roof;
 	int		**worldMap;
 	t_move	*move;
     t_rays  *rays;
 	t_digdifanalyzer	*dda;
 	t_text				*text;
-	t_sprite	sprite;
-	t_pos		player;
 }	t_game;
 
 typedef struct s_data {

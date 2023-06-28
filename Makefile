@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+         #
+#    By: achansar <achansar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 10:47:25 by achansar          #+#    #+#              #
-#    Updated: 2023/06/28 16:39:30 by ade-bast         ###   ########.fr        #
+#    Updated: 2023/06/28 15:43:13 by achansar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,26 +30,9 @@ SRC =	main \
 		move \
 		display \
 		textures \
-		errors_management \
-		parsing \
-		data_collection \
-		player_pos_and_color \
-		map_check \
-		walls_check
-
+		raycasting
 C_FILES = $(addprefix $(SRC_PATH), $(SRC:=.c))
 OBJ = $(addprefix $(SRC_PATH), $(SRC:=.o))
-
-SRC_PATH_UTILS = ./utils/
-SRC_UTILS =	player_coord \
-			utils \
-			libft \
-			ft_atoi \
-			ft_split \
-			gnl/get_next_line \
-			gnl/get_next_line_utils
-UTILS_FILES = $(addprefix $(SRC_PATH_UTILS), $(SRC_UTILS:=.c))
-UTILS_OBJ = $(addprefix $(SRC_PATH_UTILS), $(SRC_UTILS:=.o))
 
 #LIBFT
 LBFT_PATH = ./libft/
@@ -69,15 +52,15 @@ MLX_FLAGS = -framework OpenGL -framework AppKit
 #RULES
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LBFT_OBJ) $(UTILS_OBJ)
+$(NAME): $(OBJ) $(LBFT_OBJ)
 	@make -sC $(MLX_PATH)
-	@ $(CC) $(FLAGS) $(SEG) $(OBJ) $(LBFT_OBJ) $(UTILS_OBJ) $(MLX_LIB) -o $(NAME)
+	@ $(CC) $(FLAGS) $(SEG) $(OBJ) $(LBFT_OBJ) $(MLX_LIB) -o $(NAME)
 
 .c.o:
 	@ $(CC) $(FLAGS) $(SEG) $(MLX_INC) -c $< -o $@
 
 clean:
-	@rm -f $(OBJ) $(LBFT_OBJ) $(UTILS_OBJ)
+	@rm -f $(OBJ) $(LBFT_OBJ)
 	@make clean -sC $(MLX_PATH)
 
 fclean: clean

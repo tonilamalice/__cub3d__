@@ -6,36 +6,48 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:10:30 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/27 18:01:15 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:03:04 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
 
-int get_texture_pos()
+int color_floor_ceiling(t_digdifanalyzer *dda, t_text *text, int y)
 {
-
-    return (0);    
+	if (dda->end < 0)
+		dda->end = HEIGHT;
+	y = dda->end;
+	while (y < HEIGHT)
+	{
+		img_pix_put(dda->img, dda->x, y, text->color_floor);
+		img_pix_put(dda->img, dda->x, HEIGHT - y - 1, text->color_ceiling);
+		y++;
+	}
+	return (0);
 }
 
-int get_texture_color()
+int put_textures(t_digdifanalyzer *dda, t_text *text, int lineH, int *y)
 {
-    
-    return (0);
+	*y = dda->start;
+	while (*y < dda->end)
+	{
+		text->texY = (int)(*y * 2 - HEIGHT + lineH) * (text->texHeight / 2) / lineH;
+		text->color = 1;
+		text->color = ((unsigned int *)text->text_array)[text->texX + text->texY * text->texWidth];//     -> ici pour ajouter un index
+		img_pix_put(dda->img, dda->x, *y, text->color);
+		*y += 1;
+	}
+	return (0);
 }
-
 
 int load_textures(t_data *data, t_img *img, t_text *text)
 {
     int fd;
 
-    (void)img;
-    (void)data;
     fd = open(text->texFiles, O_RDONLY);
     if (fd <= 0)
         return (1);
     close(fd);
-
     text->textures = malloc(sizeof(void *));// protection
     text->text_array = malloc(sizeof(void *));// protection
     text->textures = mlx_xpm_file_to_image(data->mlx, text->texFiles, &text->texHeight, &text->texWidth);

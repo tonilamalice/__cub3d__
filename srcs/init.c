@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:11:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 16:15:07 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:27:29 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static t_text *init_texture(void)
 	text->textures = NULL;
 	text->text_array = NULL;
 	text->color = 0;
+	text->color_floor = 0x964B00;
+	text->color_ceiling = 0x006666;
 	return (text);
 }
 

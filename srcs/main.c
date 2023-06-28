@@ -3,25 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:26:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 16:46:08 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/06/28 15:48:00 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
-
-/*
-1 Set minilibX
-2 set a 2D world
-3 build the DDA algo and make it visible
-4 add moves and rotation with the transfo matrix
-5 build the perpWallDist algo
-6 draw lines (blocks)
-7 add floor and ceiling
-8 add textures
-*/
 
 int	destroy(t_data *data)
 {
@@ -34,20 +23,11 @@ int	destroy(t_data *data)
 int main(int argc, char **argv)
 {
     t_data  *data = NULL;
-	// t_game	game;
-
-	// ft_memset(&game, 0, sizeof (t_game));
-	// parsing(&game, argc, argv);
 
     (void)argc;
     (void)argv;
 
 	data = init_data();
-	// print_map(data->game->worldMap);
-	// draw_map(set);
-	// ft_memset(data->game, 0, sizeof (t_game));
-	// parsing(data->game, argc, argv);
-	
 	load_textures(data, &data->img, data->game->text);
 	create_img(data);
 	render(data, data->game, data->game->move, data->game->rays);
