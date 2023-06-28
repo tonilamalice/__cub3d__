@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:27:06 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 16:26:19 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 18:56:43 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_keys(int key, t_data *set);
 int key_release(int key, t_move *move);
 
 // MOVE FUNCTIONS
-void ft_move(t_game *game, t_move *move, int **map);
+void ft_move(t_game *game, t_move *move, char **map);
 
 // TEXTURES FUNCTIONS
 int load_textures(t_data *data, t_img *img, t_text *text);
@@ -58,7 +58,7 @@ size_t	ft_strlen(const char *s);
 
 //TEST FUNCTIONS
 void	print_map(int **map);
-int		**ft_upscale(int size, int old_size);
+char		**ft_upscale(int size, int old_size);
 
 //DISPLAY FUNCTIONS
 int	open_window(t_data *set);

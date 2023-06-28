@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 15:39:14 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 15:47:20 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 18:57:46 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int ft_dda(t_game *game, t_rays *rays, t_digdifanalyzer *dda)
 			dda->mapY += dda->stepY;
 			dda->side = 1;
 		}
-		if (game->worldMap[(int)dda->mapX][(int)dda->mapY] >= 1)
+		if (game->worldMap[(int)dda->mapX][(int)dda->mapY] == '1')
 			dda->hit = 1;
 	}
 	distance_correction(rays, dda);

@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:08:55 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/27 14:55:01 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 18:45:12 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,7 @@ int	ft_keys(int key, t_data *data)
 	// if (key && key != ESC)
 	// 	printf("%d\n", key);
 	if (key == UP || key == DOWN || key == LEFT || key == RIGHT || key == TURNL || key == TURNR)
-	{
 		key_press(key, data->game->move);
-		// printf("forward = %d\n", data->game->move->forward);
-	}
 	else if (key == ESC)
 		destroy(data);
 	return (0);
