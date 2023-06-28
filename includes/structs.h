@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 15:26:54 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 17:03:40 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ enum e_keys {
 	ESC			= 53,
 	UP			= 13,
 	DOWN		= 1,
-	LEFT		= 12,
+	LEFT		= 0,
 	RIGHT		= 2,
 	TURNL		= 123,
 	TURNR		= 124

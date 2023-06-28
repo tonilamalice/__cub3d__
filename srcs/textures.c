@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:10:30 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 16:03:04 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 17:21:53 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int color_floor_ceiling(t_digdifanalyzer *dda, t_text *text, int y)
 	return (0);
 }
 
+// NO = 0 | SO = 1 | EA = 2 | WE = 3
+
 int put_textures(t_digdifanalyzer *dda, t_text *text, int lineH, int *y)
 {
 	*y = dda->start;
@@ -33,7 +35,13 @@ int put_textures(t_digdifanalyzer *dda, t_text *text, int lineH, int *y)
 	{
 		text->texY = (int)(*y * 2 - HEIGHT + lineH) * (text->texHeight / 2) / lineH;
 		text->color = 1;
-		text->color = ((unsigned int *)text->text_array)[text->texX + text->texY * text->texWidth];//     -> ici pour ajouter un index
+        /*
+        if (side == 0 && rays->rayDirX > 0)
+            text->color = 0;
+        if (side == 1 && rays->rayDirY < 0)
+            text->color = 1;
+        */
+		text->color = ((unsigned int *)text->text_array)/*[index]*/[text->texX + text->texY * text->texWidth];//     -> ici pour ajouter un index
 		img_pix_put(dda->img, dda->x, *y, text->color);
 		*y += 1;
 	}

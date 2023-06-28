@@ -6,11 +6,18 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:26:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 15:48:00 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/28 16:35:19 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
+
+/*
+gerer textures orientation
+gerer deplacement dans murs
+get pos initial + orientation 
+translate (r, g, b) to hexa
+*/
 
 int	destroy(t_data *data)
 {
