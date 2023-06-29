@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:08:04 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 14:51:13 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:59:34 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	parsing(t_game *game, int ac, char **av)
 {
 	if (ac != 2)
 		errors(game, 1, NULL);
-	// extension_check(game, av[1]);
+	extension_check(game, av[1]);
 	read_map(game, av[1]);
 	game->worldMap = ft_split(game->map, '\n');
 	error_map(game, game->map);

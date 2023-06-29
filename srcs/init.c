@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:11:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 14:50:59 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 17:33:19 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,18 +68,50 @@ static t_move *init_move(void)
 	return (move);
 }
 
+int get_player_dir(t_game *game)
+{
+	printf("DIRECTION : %c et pas ", game->player_dir);
+	if (game->player_dir == 'N')
+	{
+		printf("N!\n");
+		game->dirX = -1.0;
+		game->dirY = 0.0;
+		game->planeX = 0.0;
+		game->planeY = -1.0;
+	}
+	if (game->player_dir == 'S')
+	{
+		printf("S!\n");
+		game->dirX = 1.0;
+		game->dirY = 0.0;
+		game->planeX = 0.0;
+		game->planeY = -1.0;
+	}
+	if (game->player_dir == 'E')
+	{
+		// printf("E!\n");
+		game->dirX = 0.0;
+		game->dirY = -1.0;
+		game->planeX = 1.0;
+		game->planeY = 0.0;
+	}
+	if (game->player_dir == 'W')
+	{
+		// printf("W!\n");
+		game->dirX = 0.0;
+		game->dirY = 1.0;
+		game->planeX = -1.0;
+		game->planeY = 0.0;
+	}
+	return (0);
+}
+
 static t_game	*init_game(int argc, char **argv)
 {
 	t_game *game;
 
 	game = NULL;
 	game = malloc(sizeof(t_game));// protection
-	game->posX = 8.0;
-	game->posY = 4.0;
-	game->dirX = -1.0;
-	game->dirY = 0.0;
-	game->planeX = 0.0;
-	game->planeY = -1.0;
 	game->screenWidth = WIDTH;
 	game->screenHeight = HEIGHT;
 	game->sprite.n_path = NULL;
@@ -89,7 +121,10 @@ static t_game	*init_game(int argc, char **argv)
 	game->roof = NULL;
 	game->floor = NULL;
 	parsing(game, argc, argv);
-	// game->worldMap = ft_upscale(24, UPSCALE);
+	game->posX = game->player.y;
+	game->posY = game->player.x;
+	get_player_dir(game);
+	// printf("Coor joueur = [%f][%f]\n", game->posX, game->posY);
 	return (game);
 }
 

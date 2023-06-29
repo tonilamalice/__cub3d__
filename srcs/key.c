@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:08:55 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 18:45:12 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 16:57:52 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ static void key_press(int key, t_move *move)
 	if (key == TURNL)
 	{
 		move->turn = true;
-		move->rotSpeed = 0.05;
+		move->rotSpeed = -0.05;
 	}
 	if (key == TURNR)
 	{
 		move->turn = true;
-		move->rotSpeed = -0.05;
+		move->rotSpeed = 0.05;
 	}
 }
 
