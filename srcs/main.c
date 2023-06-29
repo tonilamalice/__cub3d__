@@ -6,17 +6,21 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:26:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 13:36:28 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/06/29 13:46:48 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
 
 /*
-gerer textures orientation
-gerer deplacement dans murs
-get pos initial + orientation 
-translate (r, g, b) to hexa
+1 Set minilibX
+2 set a 2D world
+3 build the DDA algo and make it visible
+4 add moves and rotation with the transfo matrix
+5 build the perpWallDist algo
+6 draw lines (blocks)
+7 add floor and ceiling
+8 add textures
 */
 
 int	destroy(t_data *data)
@@ -39,6 +43,10 @@ int main(int argc, char **argv)
     // (void)argv;
 
 	data = init_data();
+	// print_map(data->game->worldMap);
+	// draw_map(set);
+	// ft_memset(data->game, 0, sizeof (t_game));
+	// parsing(data->game, argc, argv);
 	
 	load_textures(data, &data->img, data->game->text);
 	create_img(data);
