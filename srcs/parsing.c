@@ -6,9 +6,11 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:08:04 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 19:01:24 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 10:45:32 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../includes/cub.h"
 
 void	parsing(t_game *game, int ac, char **av)
 {

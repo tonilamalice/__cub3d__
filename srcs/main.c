@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:26:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 18:57:23 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 10:54:13 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ int	destroy(t_data *data)
 int main(int argc, char **argv)
 {
     t_data  *data = NULL;
+	// t_game	game;
+
+	// ft_memset(&game, 0, sizeof (t_game));
+	// parsing(&game, argc, argv);
 
     (void)argc;
     (void)argv;

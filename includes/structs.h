@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 18:57:08 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 10:48:08 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,19 @@ enum e_keys {
 	TURNL		= 123,
 	TURNR		= 124
 };
+
+typedef struct s_pos {
+	double	x;
+	double	y;
+}	t_pos;
+
+typedef struct s_sprite {
+	char	*n_path;
+	char	*s_path;
+	char	*e_path;
+	char	*w_path;
+	char	**tab_path;
+}	t_sprite;
 
 typedef struct s_img {
 	void	*img;

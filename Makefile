@@ -6,7 +6,7 @@
 #    By: achansar <achansar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 10:47:25 by achansar          #+#    #+#              #
-#    Updated: 2023/06/28 18:58:05 by achansar         ###   ########.fr        #
+#    Updated: 2023/06/29 10:52:52 by achansar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,9 +31,26 @@ SRC =	main \
 		move \
 		display \
 		textures \
-		raycasting
+		parsing \
+		data_collection \
+		player_pos_and_color \
+		map_check \
+		walls_check \
+		error_management
+
 C_FILES = $(addprefix $(SRC_PATH), $(SRC:=.c))
 OBJ = $(addprefix $(SRC_PATH), $(SRC:=.o))
+
+SRC_PATH_UTILS = ./utils/
+SRC_UTILS =	player_coord \
+			utils \
+			libft \
+			ft_atoi \
+			ft_split \
+			gnl/get_next_line \
+			gnl/get_next_line_utils
+UTILS_FILES = $(addprefix $(SRC_PATH_UTILS), $(SRC_UTILS:=.c))
+UTILS_OBJ = $(addprefix $(SRC_PATH_UTILS), $(SRC_UTILS:=.o))
 
 #LIBFT
 LBFT_PATH = ./libft/
@@ -53,16 +70,16 @@ MLX_FLAGS = -framework OpenGL -framework AppKit
 #RULES
 all: $(NAME)
 
-$(NAME): $(OBJ) $(LBFT_OBJ)
+$(NAME): $(OBJ) $(LBFT_OBJ) $(UTILS_OBJ)
 	@make -sC $(MLX_PATH)
-	@ $(CC) $(FLAGS) $(SEG) $(OBJ) $(LBFT_OBJ) $(MLX_LIB) -o $(NAME)
+	@ $(CC) $(FLAGS) $(SEG) $(OBJ) $(LBFT_OBJ) $(UTILS_OBJ) $(MLX_LIB) -o $(NAME)
 
 .c.o:
 	@ $(CC) $(FLAGS) $(SEG) $(MLX_INC) -c $< -o $@
 
 clean:
-	@rm -f $(OBJ) $(LBFT_OBJ)
-	@make clean -sC $(MLX_PATH)
+	@rm -f $(OBJ) $(LBFT_OBJ) $(UTILS_OBJ)
+#	@make clean -sC $(MLX_PATH)
 
 fclean: clean
 	@rm -f $(NAME)
