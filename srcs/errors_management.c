@@ -21,7 +21,7 @@ void	error_arg(int error, char *str)
 	}
 	else if (error == 3)
 	{
-		write (2, "Error\nWrong file name : ", 24);
+		write (2, "Error\nWrong file name : \n", 25);
 		write (2, str, ft_strlen(str));
 	}
 }
@@ -30,18 +30,23 @@ void	handle_syntax_error(int error, char *str)
 {	
 	if (error == 10)
 	{
-		write(2, "Error\nRGB format is incorrect : ", 32);
+		write(2, "Error\nRGB format is incorrect : \n", 33);
 		write (2, str, ft_strlen(str));
 	}
 	else if (error == 6)
 	{
-		write(2, "Error\nSyntax error in the file : ", 33);
+		write(2, "Error\nSyntax error in the file : \n", 34);
 		write (2, str, ft_strlen(str));
 	}
 	else if (error == 11)
 	{	
 		write(2, "Error\nThis file does not exist/is corrupted :\n", 46);
 		write (2, str, ft_strlen(str));
+	}
+	else if (error == 14)
+	{	
+		write(2, "Error\nTextures do not exist\n", 29);
+		exit(EXIT_FAILURE);
 	}
 }
 
@@ -52,7 +57,7 @@ void	handle_map_error(int error, char *str)
 			"Error\nThere is too few or too many character(s).\n", 49);
 	else if (error == 8)
 	{
-		write(2, "Error\nIncorrect character in the map : ", 39);
+		write(2, "Error\nIncorrect character in the map : \n", 40);
 		write (2, &str[0], 1);
 	}
 	else if (error == 9)
