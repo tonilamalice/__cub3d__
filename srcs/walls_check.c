@@ -6,11 +6,9 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 11:29:56 by ade-bast          #+#    #+#             */
-/*   Updated: 2023/06/28 16:43:12 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/06/28 19:46:08 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../includes/cub.h"
 
@@ -35,8 +33,12 @@ void	walls(t_game *game, char *map)
 
 void	check_coord(t_game *game, int y, int x)
 {
+	int i = 0;
+	while(game->s_map[y + 1][i] && i < x) 
+		i++;
+	
 	if (y == 0 || !game->s_map[y + 1]
-		|| !game->s_map[y - 1][x] || !game->s_map[y + 1][x])
+		|| !game->s_map[y - 1][x] || i < x || !game->s_map[y + 1][x])
 		errors(game, 9, game->map);
 	else if (game->s_map[y - 1][x] == ' ' || game->s_map[y - 1][x] == '\n')
 		errors(game, 9, game->s_map[y]);
