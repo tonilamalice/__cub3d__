@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:27:06 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 14:09:13 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 17:34:43 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int create_img(t_data *set);
 
 // PARSING FUNCTIONS
 void	parsing(t_game *game, int ac, char **av);
-void	read_map(t_game *game, char *file);
 void	rgb_check(t_game *game, char *rgb, int *color);
 void	errors(t_game *game, int error, char *str);
 void	extension_check(t_game *game, char *av);
@@ -88,5 +87,6 @@ t_pos	player_coord(char *map, int i);
 int		max_vert(char **map);
 int		max_hor(char **map, int i);
 void	filling_sprite_tab(t_game *game);
+void	read_map(t_game *game, char *file);
 
 #endif
