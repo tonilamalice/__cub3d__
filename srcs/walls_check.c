@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:46:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 11:55:27 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:52:12 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,12 @@ void	walls(t_game *game, char *map)
 
 void	check_coord(t_game *game, int y, int x)
 {
+	int i = 0;
+	while(game->worldMap[y + 1][i] && i < x) 
+		i++;
+	
 	if (y == 0 || !game->worldMap[y + 1]
-		|| !game->worldMap[y - 1][x] || !game->worldMap[y + 1][x])
+		|| !game->worldMap[y - 1][x] || i < x || !game->worldMap[y + 1][x])
 		errors(game, 9, game->map);
 	else if (game->worldMap[y - 1][x] == ' ' || game->worldMap[y - 1][x] == '\n')
 		errors(game, 9, game->worldMap[y]);

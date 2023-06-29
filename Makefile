@@ -6,7 +6,7 @@
 #    By: achansar <achansar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 10:47:25 by achansar          #+#    #+#              #
-#    Updated: 2023/06/29 10:52:52 by achansar         ###   ########.fr        #
+#    Updated: 2023/06/29 14:51:34 by achansar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,9 +44,6 @@ OBJ = $(addprefix $(SRC_PATH), $(SRC:=.o))
 SRC_PATH_UTILS = ./utils/
 SRC_UTILS =	player_coord \
 			utils \
-			libft \
-			ft_atoi \
-			ft_split \
 			gnl/get_next_line \
 			gnl/get_next_line_utils
 UTILS_FILES = $(addprefix $(SRC_PATH_UTILS), $(SRC_UTILS:=.c))
@@ -57,7 +54,12 @@ LBFT_PATH = ./libft/
 LBFT =		ft_bzero \
 			ft_memset \
 			ft_strlen \
-			ft_strdup
+			ft_atoi \
+			ft_split \
+			ft_strdup \
+			ft_strcmp \
+			ft_strlcpy \
+			ft_isdigit
 LBFT_FILES = $(addprefix $(LBFT_PATH), $(LBFT:=.c))
 LBFT_OBJ = $(addprefix $(LBFT_PATH), $(LBFT:=.o))
 
