@@ -6,7 +6,7 @@
 #    By: achansar <achansar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 10:47:25 by achansar          #+#    #+#              #
-#    Updated: 2023/06/28 18:48:54 by achansar         ###   ########.fr        #
+#    Updated: 2023/06/29 10:52:52 by achansar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,12 +31,12 @@ SRC =	main \
 		move \
 		display \
 		textures \
-		errors_management \
 		parsing \
 		data_collection \
 		player_pos_and_color \
 		map_check \
-		walls_check
+		walls_check \
+		error_management
 
 C_FILES = $(addprefix $(SRC_PATH), $(SRC:=.c))
 OBJ = $(addprefix $(SRC_PATH), $(SRC:=.o))
@@ -79,7 +79,7 @@ $(NAME): $(OBJ) $(LBFT_OBJ) $(UTILS_OBJ)
 
 clean:
 	@rm -f $(OBJ) $(LBFT_OBJ) $(UTILS_OBJ)
-	@make clean -sC $(MLX_PATH)
+#	@make clean -sC $(MLX_PATH)
 
 fclean: clean
 	@rm -f $(NAME)

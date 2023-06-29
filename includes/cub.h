@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:27:06 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 18:41:42 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:09:13 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 
 // MAIN FUNCTIONS
 int	destroy(t_data *set);
-t_data *init_data(void);
+t_data *init_data(int argc, char **argv);
 int render(t_data *data, t_game *game, t_move *move, t_rays *rays);
 int call_to_render(t_data *data);
 
@@ -49,7 +49,7 @@ void ft_move(t_game *game, t_move *move, char **map);
 // TEXTURES FUNCTIONS
 int load_textures(t_data *data, t_img *img, t_text *text);
 int color_floor_ceiling(t_digdifanalyzer *dda, t_text *text, int y);
-int put_textures(t_digdifanalyzer *dda, t_text *text, int lineH, int *y);
+int put_textures(t_digdifanalyzer *dda, t_rays *rays, t_text *text, int *y);
 
 // LIBFT FUNCTIONS
 void	ft_bzero(void *s, size_t n);

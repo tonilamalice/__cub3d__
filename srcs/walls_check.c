@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   walls_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/27 11:29:56 by ade-bast          #+#    #+#             */
-/*   Updated: 2023/06/28 16:43:12 by ade-bast         ###   ########.fr       */
+/*   Created: 2023/06/29 10:46:27 by achansar          #+#    #+#             */
+/*   Updated: 2023/06/29 11:55:27 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "../includes/cub.h"
 
@@ -35,16 +33,16 @@ void	walls(t_game *game, char *map)
 
 void	check_coord(t_game *game, int y, int x)
 {
-	if (y == 0 || !game->s_map[y + 1]
-		|| !game->s_map[y - 1][x] || !game->s_map[y + 1][x])
+	if (y == 0 || !game->worldMap[y + 1]
+		|| !game->worldMap[y - 1][x] || !game->worldMap[y + 1][x])
 		errors(game, 9, game->map);
-	else if (game->s_map[y - 1][x] == ' ' || game->s_map[y - 1][x] == '\n')
-		errors(game, 9, game->s_map[y]);
-	else if (game->s_map[y + 1][x] == ' ' || game->s_map[y + 1][x] == '\n')
-		errors(game, 9, game->s_map[y]);
-	else if (x > max_hor(game->s_map, y + 1)
-		|| (game->s_map[y - 1] && x > max_hor(game->s_map, y - 1)))
-		errors(game, 9, game->s_map[y]);
+	else if (game->worldMap[y - 1][x] == ' ' || game->worldMap[y - 1][x] == '\n')
+		errors(game, 9, game->worldMap[y]);
+	else if (game->worldMap[y + 1][x] == ' ' || game->worldMap[y + 1][x] == '\n')
+		errors(game, 9, game->worldMap[y]);
+	else if (x > max_hor(game->worldMap, y + 1)
+		|| (game->worldMap[y - 1] && x > max_hor(game->worldMap, y - 1)))
+		errors(game, 9, game->worldMap[y]);
 }
 
 void	bottom(t_game *game, char **map)
@@ -91,6 +89,6 @@ void	walls_missing(t_game *game, char *map)
 {
 
 	walls(game, map);
-	bottom(game, game->s_map);
+	bottom(game, game->worldMap);
 	new_line_and_open_map(game, map);
 }

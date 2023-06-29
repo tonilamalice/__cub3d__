@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   data_collection.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/27 11:30:18 by ade-bast          #+#    #+#             */
-/*   Updated: 2023/06/28 16:42:44 by ade-bast         ###   ########.fr       */
+/*   Created: 2023/06/29 10:43:51 by achansar          #+#    #+#             */
+/*   Updated: 2023/06/29 12:07:08 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "../includes/cub.h"
 

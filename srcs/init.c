@@ -6,27 +6,29 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:11:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/28 18:45:04 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:23:36 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
 
-static t_text *init_texture(void)
+static t_text *init_texture(t_game *game)
 {
 	t_text *text;
 
 	text = NULL;
 	text = malloc(sizeof(t_text));// protection
-	text->texFiles = ft_strdup("texture/wall_4.xpm");
+	text->texFiles = game->sprite.tab_path;
+	// printf("test in INIT = %s\n", game->sprite.tab_path[0]);
+	// printf("test in INIT = %s\n", text->texFiles[0]);
 	text->texHeight = 64;
 	text->texHeight = 64;
 
 	text->textures = NULL;
 	text->text_array = NULL;
 	text->color = 0;
-	text->color_floor = 0x964B00;
-	text->color_ceiling = 0x006666;
+	text->color_floor = game->color_floor;
+	text->color_ceiling = game->color_roof;
 	return (text);
 }
 
@@ -66,36 +68,43 @@ static t_move *init_move(void)
 	return (move);
 }
 
-static t_game	*init_game(void)
+static t_game	*init_game(int argc, char **argv)
 {
 	t_game *game;
 
 	game = NULL;
 	game = malloc(sizeof(t_game));// protection
-	game->posX = 11.0;
-	game->posY = 10.0;
+	game->posX = 8.0;
+	game->posY = 4.0;
 	game->dirX = -1.0;
 	game->dirY = 0.0;
 	game->planeX = 0.0;
 	game->planeY = -1.0;
 	game->screenWidth = WIDTH;
 	game->screenHeight = HEIGHT;
-	game->worldMap = ft_upscale(24, UPSCALE);
-	game->move = init_move();
-	game->rays = init_rays();
-	game->dda = init_dda();
-	game->text = init_texture();
+	game->sprite.n_path = NULL;
+	game->sprite.s_path = NULL;
+	game->sprite.e_path = NULL;
+	game->sprite.w_path = NULL;
+	game->roof = NULL;
+	game->floor = NULL;
+	parsing(game, argc, argv);
+	// game->worldMap = ft_upscale(24, UPSCALE);
 	return (game);
 }
 
-t_data *init_data(void)
+t_data *init_data(int argc, char **argv)
 {
 	t_data *data;
 
 	data = NULL;
 	data = malloc(sizeof(t_data));
 	open_window(data);// .             protection
-	data->game = init_game();
+	data->game = init_game(argc, argv);
+	data->game->move = init_move();
+	data->game->rays = init_rays();
+	data->game->dda = init_dda();
+	data->game->text = init_texture(data->game);
 	data->game->dda->img = &data->img;
 	return (data);
 }
