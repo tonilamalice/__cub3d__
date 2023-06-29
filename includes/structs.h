@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 10:48:08 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 14:07:38 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,16 @@ typedef struct s_digdifanalyser {
 	int		x;
 	int start;
 	int end;
+	int lineH;
 	t_img	*img;
 }   t_digdifanalyzer;
 
 typedef struct s_text {
 	int	texWidth;
 	int	texHeight;
-	char *texFiles;
-	char *textures;
-	char *text_array;
+	char **texFiles;//              malloc
+	char **textures;//              malloc
+	char **text_array;//            malloc
 
 	double wallX;
 	int texX;
@@ -94,11 +95,10 @@ typedef struct s_rays {
     double rayDirY;
 }   t_rays;
 
-typedef struct s_game {
+typedef struct s_game {//         malloc
 	char		*floor;
 	char		*roof;
 	char		*map;
-	char		**s_map;
 	char		player_dir;
 	
 	double	posX;
@@ -111,17 +111,17 @@ typedef struct s_game {
 	int		screenHeight;
 	int		color_floor;
 	int		color_roof;
-	char		**worldMap;
-	t_move	*move;
-    t_rays  *rays;
-	t_digdifanalyzer	*dda;
-	t_text				*text;
+	char		**worldMap;//        malloc
+	t_move	*move;//                 malloc
+    t_rays  *rays;//                 malloc
+	t_digdifanalyzer	*dda;//      malloc
+	t_text				*text;//     malloc
 
 	t_sprite	sprite;
 	t_pos		player;
 }	t_game;
 
-typedef struct s_data {
+typedef struct s_data {//          malloc
 	void		*mlx;
 	void		*win;
 	t_img		img;

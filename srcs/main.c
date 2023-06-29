@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:26:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 10:54:13 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/29 13:49:18 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 gerer textures orientation
 gerer deplacement dans murs
 get pos initial + orientation 
-translate (r, g, b) to hexa
+seulement 1 doit etre un mur. Le reste n4est pas bon
 */
 
 int	destroy(t_data *data)
@@ -30,17 +30,15 @@ int	destroy(t_data *data)
 int main(int argc, char **argv)
 {
     t_data  *data = NULL;
-	// t_game	game;
 
-	// ft_memset(&game, 0, sizeof (t_game));
-	// parsing(&game, argc, argv);
-
-    (void)argc;
-    (void)argv;
-
-	data = init_data();
-	
+	data = init_data(argc, argv);
 	load_textures(data, &data->img, data->game->text);
+	// int i = 0;
+	// while (data->game->worldMap[i])
+	// {
+	// 	printf("%s\n", data->game->worldMap[i]);
+	// 	i++;		
+	// }
 	create_img(data);
 	render(data, data->game, data->game->move, data->game->rays);
 	mlx_hook(data->win, 2, (1L << 0), &ft_keys, data);

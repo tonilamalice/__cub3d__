@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 12:08:04 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 11:56:12 by achansar         ###   ########.fr       */
+/*   Created: 2023/06/29 11:12:40 by achansar          #+#    #+#             */
+/*   Updated: 2023/06/29 11:51:34 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
 
-void	parsing(t_game *game, int ac, char **av)
-{
-	if (ac != 2)
-		errors(game, 1, NULL);
-	// extension_check(game, av[1]);
-	read_map(game, av[1]);
-	game->worldMap = ft_split(game->map, '\n');
-	error_map(game, game->map);
-	rgb_check(game, game->floor, &game->color_floor);
-	rgb_check(game, game->roof, &game->color_roof);
-	init_player_pos(game);
-	filling_sprite_tab(game);
-}
+// int free_all(t_data *data)
+// {
+//     if 
+//     return (0);
+// }
