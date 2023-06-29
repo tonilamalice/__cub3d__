@@ -15,7 +15,10 @@
 void	error_arg(int error, char *str)
 {
 	if (error == 1)
+	{
 		write(2, "Error\nWrong number of arguments.\n", 34);
+		exit(EXIT_FAILURE);
+	}
 	else if (error == 3)
 	{
 		write (2, "Error\nWrong file name : ", 24);
@@ -72,9 +75,9 @@ void	handle_parse_error(int error)
 void	errors(t_game *game, int error, char *str)
 {
 	(void) game;
+	error_arg(error, str);
 	handle_parse_error(error);
 	handle_map_error(error, str);
 	handle_syntax_error(error, str);
-	error_arg(error, str);
 	exit(EXIT_FAILURE);
 }
