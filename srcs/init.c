@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:11:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 14:11:17 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 15:18:16 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
 
-static t_text *init_texture(t_game *game)
+static	t_text	*init_texture(t_game *game)
 {
-	t_text *text;
+	t_text	*text;
 
 	text = NULL;
-	text = malloc(sizeof(t_text));// protection
+	text = malloc(sizeof(t_text));
 	text->texFiles = game->sprite.tab_path;
 	// printf("test in INIT = %s\n", game->sprite.tab_path[0]);
 	// printf("test in INIT = %s\n", text->texFiles[0]);
@@ -32,31 +32,30 @@ static t_text *init_texture(t_game *game)
 	return (text);
 }
 
-static t_digdifanalyzer *init_dda(void)
+static	t_digdifanalyzer	*init_dda(void)
 {
-	t_digdifanalyzer *dda;
+	t_digdifanalyzer	*dda;
 
 	dda = NULL;
-	dda = malloc(sizeof(t_digdifanalyzer));// protection
-	
+	dda = malloc(sizeof(t_digdifanalyzer));
 	return (dda);
 }
 
-static t_rays *init_rays(void)
+static	t_rays	*init_rays(void)
 {
-	t_rays *rays;
+	t_rays	*rays;
 
 	rays = NULL;
-	rays = malloc(sizeof(t_rays));// protection
+	rays = malloc(sizeof(t_rays));
 	return (rays);
 }
 
-static t_move *init_move(void)
+static	t_move	*init_move(void)
 {
-	t_move *move;
-	
+	t_move	*move;
+
 	move = NULL;
-	move = malloc(sizeof(t_move));// protection
+	move = malloc(sizeof(t_move));
 	move->moveSpeed = 0.1;
 	move->rotSpeed = 0.05;
 	move->forward = false;
@@ -68,7 +67,7 @@ static t_move *init_move(void)
 	return (move);
 }
 
-int get_player_dir(t_game *game)
+int	get_player_dir(t_game *game)
 {
 	if (game->player_dir == 'N')
 	{
@@ -103,10 +102,10 @@ int get_player_dir(t_game *game)
 
 static t_game	*init_game(int argc, char **argv)
 {
-	t_game *game;
+	t_game	*game;
 
 	game = NULL;
-	game = malloc(sizeof(t_game));// protection
+	game = malloc(sizeof(t_game));
 	game->screenWidth = WIDTH;
 	game->screenHeight = HEIGHT;
 	game->sprite.n_path = NULL;
@@ -124,13 +123,13 @@ static t_game	*init_game(int argc, char **argv)
 	return (game);
 }
 
-t_data *init_data(int argc, char **argv)
+t_data	*init_data(int argc, char **argv)
 {
-	t_data *data;
+	t_data	*data;
 
 	data = NULL;
 	data = malloc(sizeof(t_data));
-	open_window(data);// .             protection
+	open_window(data);//protection
 	data->game = init_game(argc, argv);
 	data->game->move = init_move();
 	data->game->rays = init_rays();

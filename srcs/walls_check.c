@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   walls_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:46:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 14:52:12 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 16:46:03 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,19 @@ void	walls(t_game *game, char *map)
 
 void	check_coord(t_game *game, int y, int x)
 {
-	int i = 0;
-	while(game->worldMap[y + 1][i] && i < x) 
+	int	i;
+
+	i = 0;
+	while (game->worldMap[y + 1][i] && i < x) 
 		i++;
-	
 	if (y == 0 || !game->worldMap[y + 1]
 		|| !game->worldMap[y - 1][x] || i < x || !game->worldMap[y + 1][x])
 		errors(game, 9, game->map);
-	else if (game->worldMap[y - 1][x] == ' ' || game->worldMap[y - 1][x] == '\n')
+	else if (game->worldMap[y - 1][x] == ' '
+		|| game->worldMap[y - 1][x] == '\n')
 		errors(game, 9, game->worldMap[y]);
-	else if (game->worldMap[y + 1][x] == ' ' || game->worldMap[y + 1][x] == '\n')
+	else if (game->worldMap[y + 1][x] == ' '
+		|| game->worldMap[y + 1][x] == '\n')
 		errors(game, 9, game->worldMap[y]);
 	else if (x > max_hor(game->worldMap, y + 1)
 		|| (game->worldMap[y - 1] && x > max_hor(game->worldMap, y - 1)))
@@ -91,7 +94,6 @@ void	new_line_and_open_map(t_game *game, char *map)
 
 void	walls_missing(t_game *game, char *map)
 {
-
 	walls(game, map);
 	bottom(game, game->worldMap);
 	new_line_and_open_map(game, map);

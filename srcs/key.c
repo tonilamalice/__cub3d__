@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:08:55 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 16:57:52 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 15:18:33 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int	ft_keys(int key, t_data *data)
 {
 	// if (key && key != ESC)
 	// 	printf("%d\n", key);
-	if (key == UP || key == DOWN || key == LEFT || key == RIGHT || key == TURNL || key == TURNR)
+	if (key == UP || key == DOWN || key == LEFT 
+		|| key == RIGHT || key == TURNL || key == TURNR)
 		key_press(key, data->game->move);
 	else if (key == ESC)
 		destroy(data);

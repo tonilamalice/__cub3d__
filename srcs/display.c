@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   display.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 13:53:32 by arnalove          #+#    #+#             */
-/*   Updated: 2023/06/27 17:52:36 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 15:15:41 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	open_window(t_data *set)
 	return (0);
 }
 
-int create_img(t_data *set)
+int	create_img(t_data *set)
 {
 	set->img.img = mlx_new_image(set->mlx, WIDTH, HEIGHT);
 	if (!set->img.img)

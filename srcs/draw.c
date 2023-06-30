@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:10:43 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 14:07:44 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 15:15:57 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@ void	img_pix_put(t_img *img, int x, int y, int color)
 
 static int	draw_column(t_digdifanalyzer *dda, t_text *text, t_rays *rays)
 {
-	int y = 0;
+	int	y;
 
+	y = 0;
 	if (dda->side == 1)
 		text->wallX = rays->rayPosX + dda->perpWallDist * rays->rayDirX;
 	else

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 15:39:14 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 12:00:52 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 15:23:30 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int get_distance(t_rays *rays, t_digdifanalyzer *dda)
 	return (0);
 }
 
-static int distance_correction(t_rays *rays, t_digdifanalyzer *dda)
+static	int	distance_correction(t_rays *rays, t_digdifanalyzer *dda)
 {
 	if (dda->side == 0)
 		dda->perpWallDist = fabs((dda->mapX - rays->rayPosX
@@ -48,7 +48,7 @@ static int distance_correction(t_rays *rays, t_digdifanalyzer *dda)
 	return (0);
 }
 
-static int get_rays(t_game *game, t_rays *rays, t_digdifanalyzer *dda)
+static	int	get_rays(t_game *game, t_rays *rays, t_digdifanalyzer *dda)
 {
 	rays->cameraX = (2 * (double)game->dda->x / (double)WIDTH) - 1;
 	rays->rayPosX = game->posX;
@@ -65,7 +65,7 @@ static int get_rays(t_game *game, t_rays *rays, t_digdifanalyzer *dda)
 	return (0);
 }
 
-int ft_dda(t_game *game, t_rays *rays, t_digdifanalyzer *dda)
+int	ft_dda(t_game *game, t_rays *rays, t_digdifanalyzer *dda)
 {
 	get_rays(game, rays, dda);
 	get_distance(rays, dda);
