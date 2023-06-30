@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 13:53:32 by arnalove          #+#    #+#             */
-/*   Updated: 2023/06/30 17:13:39 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 17:22:05 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	open_window(t_data *set)
 	return (0);
 }
 
-int create_img(t_data *set)
+int	create_img(t_data *set)
 {
 	set->img.img = mlx_new_image(set->mlx, WIDTH, HEIGHT);
 	if (!set->img.img)

@@ -6,13 +6,11 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 11:30:44 by ade-bast          #+#    #+#             */
-/*   Updated: 2023/06/28 16:43:27 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/06/30 16:46:15 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "../includes/cub.h"
-
 
 t_pos	player_coord(char *map, int i)
 {

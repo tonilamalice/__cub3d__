@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: achansar <achansar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/30 15:01:49 by achansar          #+#    #+#              #
-#    Updated: 2023/06/30 17:14:42 by achansar         ###   ########.fr        #
+#    Created: 2023/06/30 14:22:41 by ade-bast          #+#    #+#              #
+#    Updated: 2023/06/30 17:24:11 by achansar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME = cub3D
 #ARGUMENTS
 CC = gcc
 FLAGS = -Wall -Werror -Wno-unused -Wno-unused-parameter -Wextra -O1 -O2 -O3 
-#SEG = -fsanitize=address -g
+SEG = -fsanitize=address -g
 # MLX = -lmlx -framework OpenGL -framework AppKit
 
 #CUB3D FILES

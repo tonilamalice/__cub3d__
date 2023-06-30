@@ -6,13 +6,13 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:34:41 by arnalove          #+#    #+#             */
-/*   Updated: 2023/06/30 16:19:54 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 17:22:58 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
 
-static void mv_forward(t_game *game, t_move *move, char **map)
+static	void	mv_forward(t_game *game, t_move *move, char **map)
 {
 	if (map[(int)(game->posX + game->dirX * move->moveSpeed)]
 		[(int)game->posY] != '1')
@@ -22,7 +22,7 @@ static void mv_forward(t_game *game, t_move *move, char **map)
 		game->posY += game->dirY * move->moveSpeed;
 }
 
-static void mv_back(t_game *game, t_move *move, char **map)
+static	void	mv_back(t_game *game, t_move *move, char **map)
 {
 	if (map[(int)(game->posX - game->dirX * move->moveSpeed)]
 		[(int)game->posY] != '1')
@@ -52,10 +52,10 @@ static void	mv_right(t_game *game, t_move *move, char **map)
 		game->posY -= game->planeY * move->moveSpeed;
 }
 
-void ft_move(t_game *game, t_move *move, char **map)
+void	ft_move(t_game *game, t_move *move, char **map)
 {
-	double olDirX;
-	double oldPlaneX;
+	double	olDirX;
+	double	oldPlaneX;
 
 	if (move->forward)
 		mv_forward(game, move, map);

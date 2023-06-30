@@ -6,15 +6,15 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:11:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 17:12:29 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 17:22:51 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
 
-static t_text *init_texture(t_game *game)
+static	t_text	*init_texture(t_game *game)
 {
-	t_text *text;
+	t_text	*text;
 
 	text = NULL;
 	text = malloc(sizeof(t_text));
@@ -32,28 +32,28 @@ static t_text *init_texture(t_game *game)
 	return (text);
 }
 
-static t_digdifanalyzer *init_dda(void)
+static	t_digdifanalyzer	*init_dda(void)
 {
-	t_digdifanalyzer *dda;
+	t_digdifanalyzer	*dda;
 
 	dda = NULL;
 	dda = malloc(sizeof(t_digdifanalyzer));
 	return (dda);
 }
 
-static t_rays *init_rays(void)
+static	t_rays	*init_rays(void)
 {
-	t_rays *rays;
+	t_rays	*rays;
 
 	rays = NULL;
 	rays = malloc(sizeof(t_rays));
 	return (rays);
 }
 
-static t_move *init_move(void)
+static	t_move	*init_move(void)
 {
-	t_move *move;
-	
+	t_move	*move;
+
 	move = NULL;
 	move = malloc(sizeof(t_move));
 	if (!move)
@@ -127,7 +127,7 @@ int set_game_structs(t_game *game)
 
 static t_game	*init_game(int argc, char **argv)
 {
-	t_game *game;
+	t_game	*game;
 
 	game = NULL;
 	game = malloc(sizeof(t_game));
@@ -148,9 +148,9 @@ static t_game	*init_game(int argc, char **argv)
 	return (game);
 }
 
-t_data *init_data(int argc, char **argv)
+t_data	*init_data(int argc, char **argv)
 {
-	t_data *data;
+	t_data	*data;
 
 	data = NULL;
 	data = malloc(sizeof(t_data));
