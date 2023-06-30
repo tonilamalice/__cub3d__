@@ -4,15 +4,15 @@
 
 
 NO ./texture/colorstone.xpm
-SO ./texture/colorstone.xpm
-WE ./texture/colorstone.xpm
-EA ./texture/colorstone.xpm
+SO ./texture/bookshelf_01.xpm
+WE ./texture/cyan_concrete.xpm
+EA ./texture/soul_sand.xpm
 F 220,100,0
 C 225,30,0
 
 111111111111111111111111
 11111110000000000000001111
-100100000000000S00000011
+100100000000000N00000011
 100000000000000000001111
 1111111110110000011110001111
 100000000011000001110111111111111

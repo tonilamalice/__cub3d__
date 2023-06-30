@@ -1,9 +1,9 @@
 
 
-NO ./path_to_the_north_texture
-WE ./path_to_the_west_texture
-SO ./path_to_the_south_texture
-EA ./path_to_the_east_texture
+NO ./texture/colorstone.xpm
+SO ./texture/bookshelf_01.xpm
+WE ./texture/cyan_concrete.xpm
+EA ./texture/soul_sand.xpm
 C 225,30,0
 F 220,100,0
         1111111111111111111111111
