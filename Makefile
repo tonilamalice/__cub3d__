@@ -6,7 +6,15 @@
 #    By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/12 10:47:25 by achansar          #+#    #+#              #
-#    Updated: 2023/06/30 14:17:33 by ade-bast         ###   ########.fr        #
+<<<<<<< HEAD
+#    Updated: 2023/06/30 14:07:25 by achansar         ###   ########.fr        #
+=======
+<<<<<<< HEAD
+#    Updated: 2023/06/29 14:51:34 by achansar         ###   ########.fr        #
+=======
+#    Updated: 2023/06/29 15:20:30 by ade-bast         ###   ########.fr        #
+>>>>>>> Antoine
+>>>>>>> edea460bf2fa37ffd1fa0cc861a1712b989855ce
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +89,7 @@ $(NAME): $(OBJ) $(LBFT_OBJ) $(UTILS_OBJ)
 
 clean:
 	@rm -f $(OBJ) $(LBFT_OBJ) $(UTILS_OBJ)
-#	@make clean -sC $(MLX_PATH)
+	@make clean -sC $(MLX_PATH)
 
 fclean: clean
 	@rm -f $(NAME)

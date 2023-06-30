@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:10:43 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 14:23:40 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 14:07:44 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ static int	draw_column(t_digdifanalyzer *dda, t_text *text, t_rays *rays)
 		text->texX = text->texWidth - text->texX - 1;
 	if (dda->side == 0 && rays->rayDirY < 0)
 		text->texX = text->texWidth - text->texX - 1;
-
-	put_textures(dda, rays, text, &y);
+	y += put_textures(dda, rays, text, y);
 	color_floor_ceiling(dda, text, y);
 	return (0);
 }

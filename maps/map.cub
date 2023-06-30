@@ -3,16 +3,27 @@
 
 
 
+<<<<<<< HEAD
+NO ./texture/bookshelf_01.xpm
+SO ./texture/wood.xpm
+WE ./texture/wall_4.xpm
+EA ./texture/wet_sponge.xpm
+=======
 NO ./texture/colorstone.xpm
 SO ./texture/colorstone.xpm
 WE ./texture/colorstone.xpm
 EA ./texture/colorstone.xpm
+>>>>>>> edea460bf2fa37ffd1fa0cc861a1712b989855ce
 F 220,100,0
 C 225,30,0
 
 111111111111111111111111
 11111110000000000000001111
+<<<<<<< HEAD
+100100000000000N00000011
+=======
 100100000000000S00000011
+>>>>>>> edea460bf2fa37ffd1fa0cc861a1712b989855ce
 100000000000000000001111
 1111111110110000011110001111
 100000000011000001110111111111111
