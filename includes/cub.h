@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:27:06 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 14:15:21 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 15:38:27 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	destroy(t_data *set);
 t_data *init_data(int argc, char **argv);
 int render(t_data *data, t_game *game, t_move *move, t_rays *rays);
 int call_to_render(t_data *data);
+int free_game(t_game *game);
 
 // DRAW FUNCTIONS
 int ft_dda(t_game *game, t_rays *rays, t_digdifanalyzer *dda);

@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:45:59 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 10:46:01 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 17:16:35 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,5 @@ void	rgb_check(t_game *game, char *rgb, int *color)
 	if (i != 3)
 		errors(game, 10, rgb);
 	free_split(cpy);
+	free(rgb);
 }

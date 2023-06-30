@@ -1,8 +1,8 @@
 
-NO ./path_to_the_north_texture
-SO ./path_to_the_south_texture
-WE ./path_to_the_west_texture
-EA ./path_to_the_east_texture
+NO ./texture/mycelium_top.xpm
+SO ./texture/mycelium_top.xpm
+WE ./texture/mycelium_top.xpm
+EA ./texture/mycelium_top.xpm
 F 220,100,0
 C 225,30,0
 1111111111111111111111111

@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 16:44:22 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 11:53:57 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 16:53:52 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,9 @@ typedef struct s_digdifanalyser {
 typedef struct s_text {
 	int	texWidth;
 	int	texHeight;
-	char **texFiles;//              malloc
-	char **textures;//              malloc
-	char **text_array;//            malloc
+	char **texFiles;
+	char **textures;
+	char **text_array;
 
 	double wallX;
 	int texX;
@@ -95,7 +95,7 @@ typedef struct s_rays {
     double rayDirY;
 }   t_rays;
 
-typedef struct s_game {//         malloc
+typedef struct s_game {
 	char		*floor;
 	char		*roof;
 	char		*map;
@@ -107,15 +107,13 @@ typedef struct s_game {//         malloc
 	double	dirY;
 	double	planeX;
 	double	planeY;
-	int		screenWidth;
-	int		screenHeight;
 	int		color_floor;
 	int		color_roof;
-	char		**worldMap;//        malloc
-	t_move	*move;//                 malloc
-    t_rays  *rays;//                 malloc
-	t_digdifanalyzer	*dda;//      malloc
-	t_text				*text;//     malloc
+	char		**worldMap;
+	t_move	*move;
+    t_rays  *rays;
+	t_digdifanalyzer	*dda;
+	t_text				*text;
 
 	t_sprite	sprite;
 	t_pos		player;

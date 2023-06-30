@@ -1,7 +1,7 @@
-NO ./sprites/country.xpm
-SO ./sprites/country.xpm
-WE ./sprites/country.xpm
-EA ./sprites/country.xpm
+NO ./texture/netherrack.xpm
+SO ./texture/netherrack_01.xpm
+WE ./texture/netherrack_02.xpm
+EA ./texture/netherrack.xpm
 
   F 137, 181, 128
 C 130, 182, 255

@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 15:10:30 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 14:03:47 by achansar         ###   ########.fr       */
+/*   Updated: 2023/06/30 16:17:08 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ int load_textures(t_data *data, t_img *img, t_text *text)
 	{
     	text->textures[i] = mlx_xpm_file_to_image(data->mlx, text->texFiles[i], &text->texHeight, &text->texWidth);
     	text->text_array[i] = mlx_get_data_addr(text->textures[i], &img->bpp, &img->szline, &img->endian);
+		free(text->texFiles[i]);
 		i++;
 	}
-	// free text->textFiles d'une facon ou d'une autre !!
     return (0);
 }

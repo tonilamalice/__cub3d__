@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 12:08:04 by achansar          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2023/06/29 14:59:34 by achansar         ###   ########.fr       */
-=======
-/*   Updated: 2023/06/29 17:34:48 by ade-bast         ###   ########.fr       */
->>>>>>> edea460bf2fa37ffd1fa0cc861a1712b989855ce
+/*   Created: 2023/06/30 15:02:16 by achansar          #+#    #+#             */
+/*   Updated: 2023/06/30 17:18:37 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +24,5 @@ void	parsing(t_game *game, int ac, char **av)
 	rgb_check(game, game->roof, &game->color_roof);
 	init_player_pos(game);
 	filling_sprite_tab(game);
+	free(game->map);
 }

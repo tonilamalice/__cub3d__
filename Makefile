@@ -5,16 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: achansar <achansar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/05/12 10:47:25 by achansar          #+#    #+#              #
-<<<<<<< HEAD
-#    Updated: 2023/06/30 14:07:25 by achansar         ###   ########.fr        #
-=======
-<<<<<<< HEAD
-#    Updated: 2023/06/29 14:51:34 by achansar         ###   ########.fr        #
-=======
-#    Updated: 2023/06/29 15:20:30 by ade-bast         ###   ########.fr        #
->>>>>>> Antoine
->>>>>>> edea460bf2fa37ffd1fa0cc861a1712b989855ce
+#    Created: 2023/06/30 15:01:49 by achansar          #+#    #+#              #
+#    Updated: 2023/06/30 17:14:42 by achansar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +36,8 @@ SRC =	main \
 		player_pos_and_color \
 		map_check \
 		walls_check \
-		error_management
+		error_management \
+		free
 
 C_FILES = $(addprefix $(SRC_PATH), $(SRC:=.c))
 OBJ = $(addprefix $(SRC_PATH), $(SRC:=.o))
