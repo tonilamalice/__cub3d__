@@ -74,7 +74,7 @@ void	handle_parse_error(int error)
 	if (error == 12)
 		write(2, "Error\nNeed NO/SO/WE/EA and F/C color.\n", 38);
 	if (error == 13)
-		write(2,"Error\nTextures need xpm extension\n", 34);
+		write(2, "Error\nTextures need xpm extension\n", 34);
 }
 
 void	errors(t_game *game, int error, char *str)
