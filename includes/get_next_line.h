@@ -3,20 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
+/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:49:00 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 17:34:38 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:07:57 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "struct.h"
-# include "cub.h"
-
-
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
-
+# include "struct.h"
+# include "cub.h"
 # define BUFFER_SIZE 1
 
 char	*get_next_line(int fd);
