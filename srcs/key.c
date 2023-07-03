@@ -6,13 +6,13 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:08:55 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 15:18:33 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:10:03 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub.h"
 
-static void key_press(int key, t_move *move)
+static	void	key_press(int key, t_move *move)
 {
 	if (key == UP)
 		move->forward = true;
@@ -34,7 +34,7 @@ static void key_press(int key, t_move *move)
 	}
 }
 
-int key_release(int key, t_move *move)
+int	key_release(int key, t_move *move)
 {
 	if (key == UP)
 		move->forward = false;
@@ -53,8 +53,6 @@ int key_release(int key, t_move *move)
 
 int	ft_keys(int key, t_data *data)
 {
-	// if (key && key != ESC)
-	// 	printf("%d\n", key);
 	if (key == UP || key == DOWN || key == LEFT 
 		|| key == RIGHT || key == TURNL || key == TURNR)
 		key_press(key, data->game->move);

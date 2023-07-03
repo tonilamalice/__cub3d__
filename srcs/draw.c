@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:10:43 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 17:22:08 by achansar         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:04:01 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	drawloop(t_game *game, t_digdifanalyzer *dda)
 	dda->lineH = abs((int)((double)HEIGHT / dda->perpWallDist));
 	dda->start = -dda->lineH / 2 + (double)HEIGHT / 2;
 	dda->end = dda->lineH / 2 + (double)HEIGHT / 2;
-
 	if (dda->start < 0)
 		dda->start = 0;
 	if (dda->end >= HEIGHT)
