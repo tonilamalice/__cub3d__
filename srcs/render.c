@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 15:53:38 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 17:24:55 by achansar         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:01:45 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	test_delete_this(t_digdifanalyzer *dda, t_text *text);
 
-int	render(t_data *data, t_game *game, t_move *move, t_rays *rays)
+static int	render(t_data *data, t_game *game, t_move *move, t_rays *rays)
 {
 	game->dda->x = 0;
 	if (move->forward || move->back || move->left
@@ -22,7 +22,7 @@ int	render(t_data *data, t_game *game, t_move *move, t_rays *rays)
 	{
 		move->firstscreen = false;
 		ft_bzero(data->img.addr, WIDTH * HEIGHT * sizeof(int));
-		ft_move(game, move, game->worldMap);
+		ft_move(game, move, game->world_map);
 		while (game->dda->x < WIDTH)
 		{
 			ft_dda(game, rays, game->dda);

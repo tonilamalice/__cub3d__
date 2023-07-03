@@ -6,7 +6,7 @@
 #    By: achansar <achansar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/30 14:22:41 by ade-bast          #+#    #+#              #
-#    Updated: 2023/06/30 17:24:11 by achansar         ###   ########.fr        #
+#    Updated: 2023/07/03 12:34:40 by achansar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,15 +15,14 @@ NAME = cub3D
 
 #ARGUMENTS
 CC = gcc
-FLAGS = -Wall -Werror -Wno-unused -Wno-unused-parameter -Wextra -O1 -O2 -O3 
+FLAGS = -Wall -Werror -Wno-unused -Wno-unused-parameter -Wextra -O3 
 SEG = -fsanitize=address -g
-# MLX = -lmlx -framework OpenGL -framework AppKit
 
 #CUB3D FILES
 SRC_PATH = ./srcs/
 SRC =	main \
-		init \
-		map \
+		init_data \
+		init_game \
 		render \
 		raycasting \
 		draw \

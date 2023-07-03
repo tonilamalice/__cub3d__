@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/25 15:34:41 by arnalove          #+#    #+#             */
-/*   Updated: 2023/06/30 17:22:58 by achansar         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:05:06 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,48 +14,48 @@
 
 static	void	mv_forward(t_game *game, t_move *move, char **map)
 {
-	if (map[(int)(game->posX + game->dirX * move->moveSpeed)]
-		[(int)game->posY] != '1')
-		game->posX += game->dirX * move->moveSpeed;
-	if (map[(int)game->posX]
-		[(int)(game->posY + game->dirY * move->moveSpeed)] != '1')
-		game->posY += game->dirY * move->moveSpeed;
+	if (map[(int)(game->pos_x + game->dir_x * move->movespeed)]
+		[(int)game->pos_y] != '1')
+		game->pos_x += game->dir_x * move->movespeed;
+	if (map[(int)game->pos_x]
+		[(int)(game->pos_y + game->dir_y * move->movespeed)] != '1')
+		game->pos_y += game->dir_y * move->movespeed;
 }
 
 static	void	mv_back(t_game *game, t_move *move, char **map)
 {
-	if (map[(int)(game->posX - game->dirX * move->moveSpeed)]
-		[(int)game->posY] != '1')
-		game->posX -= game->dirX * move->moveSpeed;
-	if (map[(int)game->posX]
-		[(int)(game->posY - game->dirY * move->moveSpeed)] != '1')
-		game->posY -= game->dirY * move->moveSpeed;
+	if (map[(int)(game->pos_x - game->dir_x * move->movespeed)]
+		[(int)game->pos_y] != '1')
+		game->pos_x -= game->dir_x * move->movespeed;
+	if (map[(int)game->pos_x]
+		[(int)(game->pos_y - game->dir_y * move->movespeed)] != '1')
+		game->pos_y -= game->dir_y * move->movespeed;
 }
 
 static void	mv_left(t_game *game, t_move *move, char **map)
 {
-	if (map[(int)(game->posX + game->planeX * move->moveSpeed)]
-		[(int)game->posY] != '1')
-		game->posX += game->planeX * move->moveSpeed;
-	if (map[(int)game->posX]
-		[(int)(game->posY + game->planeY * move->moveSpeed)] != '1')
-		game->posY += game->planeY * move->moveSpeed;
+	if (map[(int)(game->pos_x + game->plane_x * move->movespeed)]
+		[(int)game->pos_y] != '1')
+		game->pos_x += game->plane_x * move->movespeed;
+	if (map[(int)game->pos_x]
+		[(int)(game->pos_y + game->plane_y * move->movespeed)] != '1')
+		game->pos_y += game->plane_y * move->movespeed;
 }
 
 static void	mv_right(t_game *game, t_move *move, char **map)
 {
-	if (map[(int)(game->posX - game->planeX * move->moveSpeed)]
-		[(int)game->posY] != '1')
-		game->posX -= game->planeX * move->moveSpeed;
-	if (map[(int)game->posX]
-		[(int)(game->posY - game->planeY * move->moveSpeed)] != '1')
-		game->posY -= game->planeY * move->moveSpeed;
+	if (map[(int)(game->pos_x - game->plane_x * move->movespeed)]
+		[(int)game->pos_y] != '1')
+		game->pos_x -= game->plane_x * move->movespeed;
+	if (map[(int)game->pos_x]
+		[(int)(game->pos_y - game->plane_y * move->movespeed)] != '1')
+		game->pos_y -= game->plane_y * move->movespeed;
 }
 
 void	ft_move(t_game *game, t_move *move, char **map)
 {
-	double	olDirX;
-	double	oldPlaneX;
+	double	oldir_x;
+	double	oldplane_x;
 
 	if (move->forward)
 		mv_forward(game, move, map);
@@ -67,15 +67,15 @@ void	ft_move(t_game *game, t_move *move, char **map)
 		mv_right(game, move, map);
 	if (move->turn)
 	{
-		olDirX = game->dirX;
-		game->dirX = game->dirX * cos(-move->rotSpeed)
-			- game->dirY * sin(-move->rotSpeed);
-		game->dirY = olDirX * sin(-move->rotSpeed)
-			+ game->dirY * cos(-move->rotSpeed);
-		oldPlaneX = game->planeX;
-		game->planeX = game->planeX * cos(-move->rotSpeed)
-			- game->planeY * sin(-move->rotSpeed);
-		game->planeY = oldPlaneX * sin(-move->rotSpeed)
-			+ game->planeY * cos(-move->rotSpeed);
+		oldir_x = game->dir_x;
+		game->dir_x = game->dir_x * cos(-move->rotspeed)
+			- game->dir_y * sin(-move->rotspeed);
+		game->dir_y = oldir_x * sin(-move->rotspeed)
+			+ game->dir_y * cos(-move->rotspeed);
+		oldplane_x = game->plane_x;
+		game->plane_x = game->plane_x * cos(-move->rotspeed)
+			- game->plane_y * sin(-move->rotspeed);
+		game->plane_y = oldplane_x * sin(-move->rotspeed)
+			+ game->plane_y * cos(-move->rotspeed);
 	}
 }
