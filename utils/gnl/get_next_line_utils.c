@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 11:30:23 by ade-bast          #+#    #+#             */
-/*   Updated: 2023/06/28 16:40:09 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:01:56 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,3 @@ char	*ft_strjoin(char *s1, char *s2)
 	free (s1);
 	return (ptr);
 }
-
-// size_t	ft_strlen(const char *str)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	if (!str)
-// 		return (0);
-// 	while (str[i] != '\0')
-// 		i++;
-// 	return (i);
-// }
