@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:10:43 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/03 14:03:37 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/03 14:11:21 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ static int	draw_column(t_digdifanalyzer *dda, t_text *text, t_rays *rays)
 
 int	drawloop(t_game *game, t_digdifanalyzer *dda)
 {
-	dda->lineH = abs((int)((double)HEIGHT / dda->perpWallDist));
-	dda->start = -dda->lineH / 2 + (double)HEIGHT / 2;
-	dda->end = dda->lineH / 2 + (double)HEIGHT / 2;
+	dda->line_h = abs((int)((double)HEIGHT / dda->wall_dist));
+	dda->start = -dda->line_h / 2 + (double)HEIGHT / 2;
+	dda->end = dda->line_h / 2 + (double)HEIGHT / 2;
 
 	if (dda->start < 0)
 		dda->start = 0;
