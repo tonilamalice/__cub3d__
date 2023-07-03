@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 15:39:14 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/03 13:07:27 by achansar         ###   ########.fr       */
+/*   Updated: 2023/07/03 19:38:57 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int	ft_dda(t_game *game, t_rays *rays, t_digdifanalyzer *dda)
 			dda->map_y += dda->step_y;
 			dda->side = 1;
 		}
+		// printf("%d %d\n", (int)dda->map_x, (int)dda->map_y);
 		if (game->world_map[(int)dda->map_x][(int)dda->map_y] == '1')
 			dda->hit = 1;
 	}

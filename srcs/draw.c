@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 16:10:43 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/03 14:11:21 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/03 20:05:20 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	img_pix_put(t_img *img, int x, int y, int color)
 {
 	char	*pixel;
-
 	if (x < WIDTH && x >= 0 && y < HEIGHT && y >= 0)
 	{
 		pixel = img->addr + (img->szline * y + x * (img->bpp / 8));

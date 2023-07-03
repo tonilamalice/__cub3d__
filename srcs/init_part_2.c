@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 13:08:33 by ade-bast          #+#    #+#             */
-/*   Updated: 2023/07/03 13:09:41 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/03 15:14:45 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@ int	get_player_dirns(t_game *game)
 {
 	if (game->player_dir == 'N')
 	{
-		game->dirX = -1.0;
-		game->dirY = 0.0;
-		game->planeX = 0.0;
-		game->planeY = 1.0;
+		game->dir_x = -1.0;
+		game->dir_y = 0.0;
+		game->plane_x = 0.0;
+		game->plane_y = 1.0;
 	}
 	else if (game->player_dir == 'S')
 	{
-		game->dirX = 1.0;
-		game->dirY = 0.0;
-		game->planeX = 0.0;
-		game->planeY = -1.0;
+		game->dir_x = 1.0;
+		game->dir_y = 0.0;
+		game->plane_x = 0.0;
+		game->plane_y = -1.0;
 	}
 	else
 		get_player_direw(game);
@@ -66,8 +66,8 @@ static t_game	*init_game(int argc, char **argv)
 	game->color_floor = 0;
 	game->color_roof = 0;
 	parsing(game, argc, argv);
-	game->posX = game->player.y;
-	game->posY = game->player.x;
+	game->pos_x = game->player.y;
+	game->pos_y = game->player.x;
 	set_game_structs(game);
 	return (game);
 }
