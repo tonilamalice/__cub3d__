@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:08:04 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 17:23:00 by achansar         ###   ########.fr       */
+/*   Updated: 2023/07/03 13:01:45 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	parsing(t_game *game, int ac, char **av)
 		errors(game, 1, NULL);
 	extension_check(game, av[1]);
 	read_map(game, av[1]);
-	game->worldMap = ft_split(game->map, '\n');
+	game->world_map = ft_split(game->map, '\n');
 	error_map(game, game->map);
 	rgb_check(game, game->floor, &game->color_floor);
 	rgb_check(game, game->roof, &game->color_roof);

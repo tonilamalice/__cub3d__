@@ -6,7 +6,7 @@
 /*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 18:26:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/30 17:22:54 by achansar         ###   ########.fr       */
+/*   Updated: 2023/07/03 12:43:30 by achansar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int	destroy(t_data *data)
 	if (data->win)
 		mlx_destroy_window(data->mlx, data->win);
 	free(data);
-	system("leaks cub3D");
 	exit(0);
 }
 
 int	main(int argc, char **argv)
 {
-    t_data 	*data = NULL;
+	t_data	*data;
 
+	data = NULL;
 	data = init_data(argc, argv);
 	if (!data)
 		return (1);
