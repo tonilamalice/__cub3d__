@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+         #
+#    By: achansar <achansar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/30 14:22:41 by ade-bast          #+#    #+#              #
-#    Updated: 2023/07/04 10:11:27 by ade-bast         ###   ########.fr        #
+#    Updated: 2023/07/04 13:05:56 by achansar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = cub3D
 
 #ARGUMENTS
 CC = gcc
-FLAGS = -Wall -Werror -Wno-unused -Wno-unused-parameter -Wextra -O3 
+FLAGS = -Wall -Werror -Wextra -O3 
 SEG = -fsanitize=address -g
 
 #CUB3D FILES
