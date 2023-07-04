@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:08:04 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/04 10:32:06 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:19:16 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	parsing(t_game *game, int ac, char **av)
 	game->world_map = ft_split(game->map, '\n');
 	while (game->world_map[map_size++])
 		;
-	*sizes = malloc(sizeof(int) * map_size);
+	sizes = malloc(sizeof(int) * map_size);
 	if (!sizes)
 		exit(EXIT_FAILURE);
 	map_size = -1;
