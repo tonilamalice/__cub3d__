@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:44:30 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/04 10:17:26 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:34:36 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,27 @@ void	error_arg(int error, char *str)
 	else if (error == 3)
 	{
 		write (2, "Error\nWrong file name : \n", 26);
-		write (2, str, ft_strlen(str));
+		exit(EXIT_FAILURE);
 	}
 }
 
 void	handle_syntax_error(int error, char *str)
 {	
+	(void) str;
 	if (error == 10)
 	{
-		write(2, "Error\nRGB format is incorrect : \n", 34);
-		write (2, str, ft_strlen(str));
+		write(2, "Error\nRGB format is incorrect\n", 31);
+		exit(EXIT_FAILURE);
 	}
 	else if (error == 6)
 	{
-		write(2, "Error\nSyntax error in the file : \n", 35);
-		write (2, str, ft_strlen(str));
+		write(2, "Error\nSyntax error in the file\n", 32);
+		exit(EXIT_FAILURE);
 	}
 	else if (error == 11)
 	{	
-		write(2, "Error\nThis file does not exist/is corrupted :\n", 47);
-		write (2, str, ft_strlen(str));
+		write(2, "Error\nThis file does not exist/is corrupted\n", 45);
+		exit(EXIT_FAILURE);
 	}
 	else if (error == 14)
 	{	
@@ -59,10 +60,12 @@ void	handle_map_error(int error, char *str)
 	else if (error == 8)
 	{
 		write(2, "Error\nIncorrect character in the map\n", 38);
+		exit(EXIT_FAILURE);
 	}
 	else if (error == 9)
 	{	
 		write(2, "Error\nA wall of the map is open\n", 33);
+		exit(EXIT_FAILURE);
 	}
 	else if (error == 5)
 		write(2, "Error\nThis map does not exist.\n", 32);
