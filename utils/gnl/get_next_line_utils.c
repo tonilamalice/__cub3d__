@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 11:30:23 by ade-bast          #+#    #+#             */
-/*   Updated: 2023/07/03 12:48:09 by achansar         ###   ########.fr       */
+/*   Updated: 2023/07/03 14:06:06 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,3 @@ char	*ft_strjoin(char *s1, char *s2)
 	free (s1);
 	return (ptr);
 }
-
-// size_t	ft_strlen(const char *str)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	if (!str)
-// 		return (0);
-// 	while (str[i] != '\0')
-// 		i++;
-// 	return (i);
-// }

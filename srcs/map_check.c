@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:44:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/06/29 17:19:19 by achansar         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:41:30 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ void	other_character(t_game *game, char *map)
 	}
 }
 
-void	error_map(t_game *game, char *map)
+void	error_map(t_game *game, char *map, int *sizes)
 {
 	other_character(game, map);
 	number_of_characters(game, map);
-	walls_missing(game, map);
+	walls_missing(game, map, sizes);
 }

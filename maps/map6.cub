@@ -1,4 +1,3 @@
-
 NO ./texture/netherrack.xpm
 SO ./texture/netherrack_01.xpm
 WE ./texture/netherrack_02.xpm
@@ -10,6 +9,5 @@ C 225,30,0
 1N1
 1001
 1101 
-  000000  
-  0000000000
-  
+000000  
+0000000000

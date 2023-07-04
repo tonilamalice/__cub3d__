@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/27 11:30:44 by ade-bast          #+#    #+#             */
-/*   Updated: 2023/06/30 16:46:15 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/03 19:47:10 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ t_pos	player_coord(char *map, int i)
 	count = 0;
 	while (j >= 0)
 	{
-		if (map[j] == '\n')
-			count++;
+		if (map[j] == '\n' && map[j + 1] != '\n')
+				count++;
 		if (map[j] == '\n' && count == 1)
 			pos.x = i - j - 1 + 0.05;
 		j--;
