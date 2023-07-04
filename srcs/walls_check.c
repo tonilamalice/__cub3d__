@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:46:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/04 10:16:21 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/04 14:57:41 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,9 @@ void	walls(t_game *game, char *map)
 
 void	check_coord(t_game *game, int y, int x, int *sizes)
 {
-	int	i;
-
-	i = 0;
-	while (game->world_map[y + 1][i] && i < x)
-		i++;
 	if (y == 0 || !game->world_map[y + 1]
 		|| x >= sizes[y - 1] || x >= sizes[y + 1]
-		|| !game->world_map[y - 1][x] || i < x || !game->world_map[y + 1][x])
+		|| !game->world_map[y - 1][x] || !game->world_map[y + 1][x])
 		errors(game, 9, game->map);
 	else if (game->world_map[y - 1][x] == ' '
 		|| game->world_map[y - 1][x] == '\n')
@@ -53,42 +48,44 @@ void	check_coord(t_game *game, int y, int x, int *sizes)
 		errors(game, 9, game->world_map[y]);
 }
 
+void	check_empty_line(t_game *game, int *sizes, int i, int j)
+{
+	while (game->world_map[i][j])
+	{
+		if (game->world_map[i][j] == '0' || player(game->world_map[i][j]))
+			check_coord(game, i, j, sizes);
+		j++;
+	}
+	if (game->world_map[i + 1] && sizes[i + 1] == 0)
+	{
+		sizes[i] = 0;
+		sizes[i + 1] = game->tmp_size;
+	}
+	game->map_i += j + 1;
+	i++;
+}
+
 void	bottom(t_game *game, char **map, int *sizes)
 {
 	int		i;
 	int		j;
 
 	i = 0;
+	game->map_i = 0;
 	while (map[i])
 	{
 		j = 0;
-		while (map[i][j])
+		if (map[i + 1])
+			game->tmp_size = sizes[i + 1];
+		if (game->map[game->map_i + sizes[i] + 1] == '\n')
 		{
-			if (map[i][j] == '0' || player(map[i][j]))
-				check_coord(game, i, j, sizes);
-			j++;
+			sizes[i + 1] = 0;
+			while (game->map[game->map_i + sizes[i] + 1 + j] == '\n')
+				j++;
+			game->map_i += j;
+			j = 0;
 		}
-		i++;
-	}
-}
-
-void	new_line_and_open_map(t_game *game, char *map)
-{
-	int	i;
-	int	n;
-
-	i = 0;
-	while (map[i])
-	{
-		n = i;
-		while ((map[i] == '0' || player(map[i])) && map[n])
-		{
-			n++;
-			if (map[n] == '\n' && map[n + 1] && map[n + 1] == '\n')
-				errors(game, 9, map);
-			else if (map[n] == '\n' && map[n + 1] && map[n + 1] != '\n')
-				break ;
-		}
+		check_empty_line(game, sizes, i, j);
 		i++;
 	}
 }
@@ -97,5 +94,4 @@ void	walls_missing(t_game *game, char *map, int *sizes)
 {
 	walls(game, map);
 	bottom(game, game->world_map, sizes);
-	new_line_and_open_map(game, map);
 }
