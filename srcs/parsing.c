@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 12:08:04 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/03 20:07:13 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:32:06 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,20 @@
 
 void	parsing(t_game *game, int ac, char **av)
 {
-	int map_size;
+	int	map_size;
+	int	*sizes;
 
 	if (ac != 2)
 		errors(game, 1, NULL);
 	map_size = 0;
 	extension_check(game, av[1]);
 	read_map(game, av[1]);
-	game->world_map = ft_split(game->map, '\n');// TODO protect this
+	game->world_map = ft_split(game->map, '\n');
 	while (game->world_map[map_size++])
 		;
-	int *sizes = malloc(sizeof(int) * map_size);
+	*sizes = malloc(sizeof(int) * map_size);
 	if (!sizes)
-		;//TODO error
+		exit(EXIT_FAILURE);
 	map_size = -1;
 	while (game->world_map[++map_size])
 		sizes[map_size] = ft_strlen(game->world_map[map_size]);

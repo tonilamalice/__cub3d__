@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:44:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/03 20:06:21 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:26:05 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	space_in_map(t_game *game)
 {
 	int	y;
 	int	flag;
-	
+
 	flag = 0;
 	y = 1;
 	while (game->map[y])

@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/28 15:39:14 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/03 19:38:57 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:15:49 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ static int	get_distance(t_rays *rays, t_digdifanalyzer *dda)
 	else
 	{
 		dda->step_x = 1;
-		dda->sidedist_x = (dda->map_x + 1.0 - rays->raypos_x) * dda->deltadist_x;
+		dda->sidedist_x = (dda->map_x + 1.0 - rays->raypos_x)
+			* dda->deltadist_x;
 	}
 	if (rays->raydir_y < 0)
 	{
@@ -32,7 +33,8 @@ static int	get_distance(t_rays *rays, t_digdifanalyzer *dda)
 	else
 	{
 		dda->step_y = 1;
-		dda->sidedist_y = (dda->map_y + 1.0 - rays->raypos_y) * dda->deltadist_y;
+		dda->sidedist_y = (dda->map_y + 1.0 - rays->raypos_y)
+			* dda->deltadist_y;
 	}
 	return (0);
 }
@@ -83,7 +85,6 @@ int	ft_dda(t_game *game, t_rays *rays, t_digdifanalyzer *dda)
 			dda->map_y += dda->step_y;
 			dda->side = 1;
 		}
-		// printf("%d %d\n", (int)dda->map_x, (int)dda->map_y);
 		if (game->world_map[(int)dda->map_x][(int)dda->map_y] == '1')
 			dda->hit = 1;
 	}

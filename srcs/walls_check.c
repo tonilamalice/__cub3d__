@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:46:27 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/03 20:02:23 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:16:21 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	check_coord(t_game *game, int y, int x, int *sizes)
 	i = 0;
 	while (game->world_map[y + 1][i] && i < x)
 		i++;
-	if (y == 0 || !game->world_map[y + 1] 
+	if (y == 0 || !game->world_map[y + 1]
 		|| x >= sizes[y - 1] || x >= sizes[y + 1]
 		|| !game->world_map[y - 1][x] || i < x || !game->world_map[y + 1][x])
 		errors(game, 9, game->map);
@@ -95,7 +95,6 @@ void	new_line_and_open_map(t_game *game, char *map)
 
 void	walls_missing(t_game *game, char *map, int *sizes)
 {
-	// space_in_map(game);
 	walls(game, map);
 	bottom(game, game->world_map, sizes);
 	new_line_and_open_map(game, map);

@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:44:30 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/03 20:05:32 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/04 10:17:26 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	handle_parse_error(int error)
 	if (error == 13)
 		write(2, "Error\nTextures need xpm extension\n", 35);
 	if (error == 16)
-	write(2, "Error\nEmpty line in map\n", 25);
+		write(2, "Error\nEmpty line in map\n", 25);
 }
 
 void	errors(t_game *game, int error, char *str)
