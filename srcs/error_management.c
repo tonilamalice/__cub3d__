@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:44:30 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/04 11:34:36 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:35:13 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	error_arg(int error, char *str)
 {
+	(void) str;
 	if (error == 1)
 	{
 		write(2, "Error\nWrong number of arguments.\n", 34);
