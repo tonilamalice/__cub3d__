@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:44:30 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/04 11:35:13 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:39:15 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	error_arg(int error, char *str)
 	}
 	else if (error == 3)
 	{
-		write (2, "Error\nWrong file name : \n", 26);
+		write (2, "Error\nWrong file name\n", 23);
 		exit(EXIT_FAILURE);
 	}
 }
