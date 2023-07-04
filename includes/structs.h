@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: achansar <achansar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 12:52:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/03 13:07:39 by achansar         ###   ########.fr       */
+/*   Updated: 2023/07/04 14:43:59 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,8 @@ typedef struct s_game {
 	t_text				*text;
 	t_sprite			sprite;
 	t_pos				player;
+	int					tmp_size;
+	int					map_i;
 }	t_game;
 
 typedef struct s_data {
