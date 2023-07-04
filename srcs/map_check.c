@@ -6,7 +6,7 @@
 /*   By: ade-bast <ade-bast@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/29 10:44:57 by achansar          #+#    #+#             */
-/*   Updated: 2023/07/04 10:26:05 by ade-bast         ###   ########.fr       */
+/*   Updated: 2023/07/04 11:41:30 by ade-bast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,29 +63,4 @@ void	error_map(t_game *game, char *map, int *sizes)
 	other_character(game, map);
 	number_of_characters(game, map);
 	walls_missing(game, map, sizes);
-}
-
-void	space_in_map(t_game *game)
-{
-	int	y;
-	int	flag;
-
-	flag = 0;
-	y = 1;
-	while (game->map[y])
-	{
-		if (game->map[y] == ' ' && game->map[y - 1] == '\n')
-		{
-			flag = 1;
-			while (game->map[y] != '\n')
-			{
-				if (game->map[y] != ' ' && game->map[y] != '\n')
-					flag = 0;
-				y++;
-			}
-			if (flag == 1)
-				errors(game, 16, "");
-		}
-		y++;
-	}
 }
